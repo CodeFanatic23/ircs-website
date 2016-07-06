@@ -1,0 +1,87 @@
+<header class="main-header">
+        
+    
+        <nav class="navbar navbar-static-top">
+
+            <div class="navbar-top">
+
+              <div class="container">
+                  <div class="row">
+
+                    <div class="col-sm-6 col-xs-12">
+
+                        <ul class="list-unstyled list-inline header-contact">
+                            <li> <i class="fa fa-phone"></i> <a href="tel:">+91 11 23711551 </a> </li>
+                             <li> <i class="fa fa-envelope"></i> <a href="mailto:info@indianredcross.org">info@indianredcross.org</a> </li>
+                       </ul> <!-- /.header-contact  -->
+                      
+                    </div>
+
+                    <div class="col-sm-6 col-xs-12 text-right">
+
+                        <ul class="list-unstyled list-inline header-social">
+
+                            <li> <a href="#"> <i class="fa fa-facebook"></i> </a> </li>
+                            <li> <a href="#"> <i class="fa fa-twitter"></i>  </a> </li>
+                            <li> <a href="#"> <i class="fa fa-google"></i>  </a> </li>
+                            <li> <a href="#"> <i class="fa fa-youtube"></i>  </a> </li>
+                            <li> <a href="#"> <i class="fa fa fa-pinterest-p"></i>  </a> </li>
+                       </ul> <!-- /.header-social  -->
+                      
+                    </div>
+
+
+                  </div>
+              </div>
+
+            </div>
+
+            <div class="navbar-main">
+              
+              <div class="container">
+
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                  </button>
+                  
+                  <a class="navbar-brand" href="{% url 'bbhome' %}"><img src="/static/bloodbank/images/ircs_logo.png" alt="" style= "margin-top: -10px;"></a>
+                  
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse pull-right">
+
+                  <ul class="nav navbar-nav">
+
+                    <li><a class="is-active" href="{% url 'bbhome' %}">HOME</a></li>
+                    <li><a href="{% url 'bbabout' %}">ROLE of IRCS</a></li>
+                    <li class="has-child"><a href="{% url 'statistics' %}">STATISTICS</a>
+
+                      <!-- <ul class="submenu">
+                         <li class="submenu-item"><a href="causes.html">Causes list </a></li>
+                         <li class="submenu-item"><a href="causes-single.html">Single cause </a></li>
+                         <li class="submenu-item"><a href="causes-single.html">Single cause </a></li>
+                         <li class="submenu-item"><a href="causes-single.html">Single cause </a></li>
+                      </ul> -->
+
+                    </li>
+                    <li><a href="{% url 'bbgallery' %}">GALLERY</a></li>
+                    <li><a href="{% url 'downloads' %}">DOWNLOADS</a></li>
+
+                  </ul>
+
+                </div> <!-- /#navbar -->
+
+              </div> <!-- /.container -->
+              
+            </div> <!-- /.navbar-main -->
+
+
+        </nav> 
+
+    </header> <!-- /. main-header -->

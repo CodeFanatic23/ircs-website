@@ -111,7 +111,7 @@ img{
   position:absolute;
   left:50%; /* centers the loading animation horizontally one the screen */
   top:50%; /* centers the loading animation vertically one the screen */
-  background-image:url(../../images/status.gif); /* path to your loading animation */
+  background-image:url(images/status.gif); /* path to your loading animation */
   background-repeat:no-repeat;
   background-position:center;
   margin:-100px 0 0 -100px; /* is width and height divided by two */
@@ -2390,7 +2390,7 @@ a.gallery-iteam:hover .image-effect::before {
 .my-simple-gallery figcaption {
   bottom: 0;
   color: #fff;
-  display: block;
+  display: none;
   font-size: 18px;
   font-weight: bold;
   left: 0;

@@ -1,0 +1,15 @@
+admin-multiupload==0.1
+Django==1.9.7
+django-ckeditor==5.0.3
+django-crispy-forms==1.6.0
+django-filer==1.2.2
+django-mptt==0.8.4
+django-multiupload==0.5.1
+django-picklefield==0.3.2
+django-polymodels==1.4.5
+django-polymorphic==0.8.1
+django-registration-redux==1.4
+easy-thumbnails==2.3
+patool==1.12
+Pillow==3.3.0
+Unidecode==0.4.19

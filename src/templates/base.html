@@ -1,0 +1,173 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--=============================================== 
+    Template Design By WpFreeware Team.
+    Author URI : http://www.wpfreeware.com/
+    ====================================================-->
+
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>The Indian Red Cross Society</title>
+
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include "menu_css.html" %}
+    {% block style %}
+    {% endblock %}
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]--> 
+  </head>
+  <body>  
+    
+    {% include "menu.html" %}
+
+    <section id="blogArchive">      
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          <div class="blog-breadcrumbs-area">
+          <div class="container">
+              <div class="blog-breadcrumbs-left">
+                <h2></h2>
+              </div>
+              <div class="blog-breadcrumbs-right">
+                <ol class="breadcrumb">
+                  <li>You are here</li>
+                  {% for x in url %}
+                  <li><a href="../{{x}}">{{x}}</a></li>
+                  {% endfor %}                 
+                  <li class="active">{{category}}</li>
+                
+                </ol>
+              </div>
+            </div>
+            
+          </div>
+        </div>        
+      </div>      
+    </section>
+    <!--=========== BEGIN Service SECTION ================-->
+    <section id="service">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="service-area">
+              <!-- Start Service Title -->
+              {% block content %}
+              {% endblock %}
+              <!-- Start Service Content -->
+              <div class="service-content">
+                <div class="row">
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--=========== End Service SECTION ================-->
+    {% block other_content %}
+    {% endblock %}
+    
+
+    <!--=========== Start Footer SECTION ================-->
+     <footer id="footer">
+      <!-- Start Footer Top -->
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="single-footer-widget">
+                <div class="section-heading">
+                <h2>About Us</h2>
+                <div class="line"></div>
+              </div>           
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="single-footer-widget">
+                <div class="section-heading">
+                <h2>Quick Links</h2>
+                <div class="line"></div>
+              </div>
+              <ul class="footer-service">
+                <li><a href="#"><span class="fa fa-check"></span>First Medical Responders(FMR)</a></li>
+                <li><a href="#"><span class="fa fa-check"></span>St. Jones Ambulance</a></li>
+                <li><a href="#"><span class="fa fa-check"></span>Disaster Management</a></li>
+                <li><a href="#"><span class="fa fa-check"></span>Blood Bank</a></li>
+                <li><a href="#"><span class="fa fa-check"></span>Donate</a></li>
+                <li><a href="#"><span class="fa fa-check"></span>Volunteer</a></li>
+              </ul>
+              </div>
+            </div>
+            <!-- <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="single-footer-widget">
+                <div class="section-heading">
+                <h2>Tags</h2>
+                <div class="line"></div>
+              </div>
+                <ul class="tag-nav">
+                  <li><a href="#">Dental</a></li>
+                  <li><a href="#">Surgery</a></li>
+                  <li><a href="#">Pediatric</a></li>
+                  <li><a href="#">Cardiac</a></li>
+                  <li><a href="#">Ophthalmology</a></li>
+                  <li><a href="#">Diabetes</a></li>
+                </ul>
+              </div>
+            </div> -->
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="single-footer-widget">
+                <div class="section-heading">
+                <h2>Contact Info</h2>
+                <div class="line"></div>
+              </div>
+              <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+              <address class="contact-info">
+                <p><span class="fa fa-home"></span>Indian Red Cross National HQ,Central Secretariat,New Delhi</p>
+                <p><span class="fa fa-phone"></span>phone no.</p>
+                <p><span class="fa fa-envelope"></span>info@indianredcross.org</p>
+              </address>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Start Footer Middle -->
+      <div class="footer-middle">
+        <div class="container">
+          <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="footer-copyright">
+              <p>&copy; Copyright 2016 <a href="index.html">Indian Red Cross Society</a></p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="footer-social">              
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <!-- <a href="#"><span class="fa fa-google-plus"></span></a>
+                <a href="#"><span class="fa fa-linkedin"></span></a>   -->   
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+  <!--=========== End Footer SECTION ================-->
+
+   {% include "menu_js.html" %}
+     
+  </body>
+</html>

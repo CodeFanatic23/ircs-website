@@ -1,0 +1,35 @@
+{% extends "admin_base.html" %}
+{% block content %}
+<div>
+<h2>Top Slider</h2>
+<form action="../upload/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="files" multiple/>
+    <input type="submit" value="Save" />
+</form>
+</div>
+<div>
+<h2>Team Images</h2>
+<form action="../upload/" method="post" enctype="multipart/form-data">
+    {% csrf_token %}    
+    <input type="file" name="files" multiple/>
+    <input type="submit" value="Save" />
+</form>
+</div>
+<div>
+<h2>Alerts</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ alerts_form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+</div>
+<div>
+<h2>Branches Number</h2>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ branch_form.as_p }}
+    <input type="submit" value="Save" />
+</form>
+</div>
+{% endblock %}

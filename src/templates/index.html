@@ -29,79 +29,24 @@
     <section id="sliderArea">
       <!-- Start slider wrapper -->      
       <div class="top-slider">
+      {% for i in slider_data %}
         <!-- Start First slide -->
         <div class="top-slide-inner">
           <div class="slider-img">
-            <img src="/media/main/images/14.jpg" alt="">
+            <img src="/media/uploads/topslider/{{i}}" alt="">
           </div>
           <div class="slider-text">
-            <h2>Welcome to <strong>IRCS</strong> ,The Indian Red Cross Society</h2>
-            <p><strong>IRCS</strong> Working to Care</p>
+            <h2>{{slider_text_1}} <strong>{{slider_text_2}}</strong> {{slider_text_3}}</h2>
+            <p><strong>IRCS</strong> {{slider_text_4}}</p>
             <div class="readmore_area">
               <a data-hover="Read More" href="#"><span>Read More</span></a>                
             </div>
           </div>
         </div>
+        {% endfor %}
         <!-- End First slide -->
 
-        <!-- Start 2nd slide -->
-        <div class="top-slide-inner">
-          <div class="slider-img">
-            <img src="/media/main/images/15.jpg" alt="">
-          </div>
-          <div class="slider-text">
-            <h2>Welcome to <strong>IRCS</strong> ,The Indian Red Cross Society</h2>
-            <p><strong>IRCS</strong> Working to Care</p>
-            <div class="readmore_area">
-              <a data-hover="Read More" href="#"><span>Read More</span></a>                
-            </div>
-          </div>
-        </div>
-        <!-- End 2nd slide -->
-
-        <!-- Start Third slide -->
-        <div class="top-slide-inner">
-          <div class="slider-img">
-            <img src="/media/main/images/7.jpg" alt="">
-          </div>
-          <div class="slider-text">
-            <h2>Welcome to <strong>IRCS</strong> ,The Indian Red Cross Society</h2>
-            <p><strong>IRCS</strong> Working to Care</p>
-            <div class="readmore_area">
-              <a data-hover="Read More" href="#"><span>Read More</span></a>                
-            </div>
-          </div>
-        </div>
-        <!-- End Third slide -->
-
-        <!-- Start Fourth slide -->
-        <div class="top-slide-inner">
-          <div class="slider-img">
-            <img src="/media/main/images/12.jpg" alt="">
-          </div>
-          <div class="slider-text">
-            <h2>Welcome to <strong>IRCS</strong> ,The Indian Red Cross Society</h2>
-            <p><strong>IRCS</strong> Working to Care</p>
-            <div class="readmore_area">
-              <a data-hover="Read More" href="#"><span>Read More</span></a>                
-            </div>
-          </div>
-        </div>
-        <!-- End Fourth slide -->
-
-        <!-- Start Fifth slide -->
-        <div class="top-slide-inner">
-          <div class="slider-img">
-            <img src="/media/main/images/9.jpg" alt="">
-          </div>
-          <div class="slider-text">
-            <h2>Welcome to <strong>IRCS</strong> ,The Indian Red Cross Society</h2>
-            <p><strong>IRCS</strong> Working to Care</p>
-            <div class="readmore_area">
-              <a data-hover="Read More" href="#"><span>Read More</span></a>                
-            </div>
-          </div>
-        </div>
+        
         <!-- End Fifth slide -->
       </div><!-- /top-slider -->
     </section>
@@ -257,7 +202,7 @@
                         <span class="fa fa-stethoscope service-icon-effect"></span>  
                       </div>                      
                       <h3><a href="#">FMR</a></h3>
-                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                      <p>{{fmr_description}}</p>
                     </div>
                   </div>
                   <!-- Start Single Service -->
@@ -267,7 +212,7 @@
                         <span class="fa fa-heartbeat service-icon-effect"></span>  
                       </div>                      
                       <h3><a href="#">Blood Bank</a></h3>
-                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                      <p>{{bloodbank_description}}</p>
                     </div>
                   </div>
                   <!-- Start Single Service -->
@@ -277,37 +222,38 @@
                         <span class="fa fa-h-square service-icon-effect"></span>  
                       </div>                      
                       <h3><a href="#">Disaster Management</a></h3>
-                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                      <p>{{dm_description}}</p>
                     </div>
                   </div>
                   <!-- Start Single Service -->
-                  <div class="col-lg-4 col-md-4">
-                    <div class="single-service">
-                      <div class="service-icon">
-                        <span class="fa fa-medkit service-icon-effect"></span>  
-                      </div>                      
-                      <h3><a href="#">Medical Health Care</a></h3>
-                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
-                    </div>
-                  </div>
+                  
                   <!-- Start Single Service -->
                   <div class="col-lg-4 col-md-4">
                     <div class="single-service">
-                      <div class="service-icon">
+                      <!-- <div class="service-icon">
                         <span class="fa fa-user-md service-icon-effect"></span>  
-                      </div>                      
-                      <h3><a href="#">Doctors</a></h3>
-                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                      </div> -->                      
+                      <!-- <h3><a href="#">Doctors</a></h3>
+                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p> -->
                     </div>
                   </div>
-                  <!-- Start Single Service -->
                   <div class="col-lg-4 col-md-4">
                     <div class="single-service">
                       <div class="service-icon">
                         <span class="fa fa-ambulance service-icon-effect"></span>  
                       </div>                      
                       <h3><a href="#">St Jones Ambulance</a></h3>
-                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p>
+                      <p>{{st_john_description}}</p>
+                    </div>
+                  </div>
+                  <!-- Start Single Service -->
+                  <div class="col-lg-4 col-md-4">
+                    <div class="single-service">
+                      <!-- <div class="service-icon">
+                        <span class="fa fa-ambulance service-icon-effect"></span>  
+                      </div>                      
+                      <h3><a href="#">St Jones Ambulance</a></h3>
+                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p> -->
                     </div>
                   </div>
                 </div>
@@ -353,7 +299,7 @@
                 <div class="whyChoose-right">
                   <div class="media">
                     <div class="media-left">
-                      <a href="#" class="media-icon">
+                      <a href="newsletter" class="media-icon">
                         <span class="fa fa-newspaper-o"></span>
                       </a>
                     </div>
@@ -364,7 +310,7 @@
                   </div>
                   <div class="media">
                     <div class="media-left">
-                      <a href="#" class="media-icon">
+                      <a href="volunteer" class="media-icon">
                         <span class="fa fa-wheelchair"></span>
                       </a>
                     </div>
@@ -375,7 +321,7 @@
                   </div>
                   <div class="media">
                     <div class="media-left">
-                      <a href="#" class="media-icon">
+                      <a href="donate" class="media-icon">
                         <span class="fa fa-tint"></span>
                       </a>
                     </div>
@@ -402,7 +348,7 @@
               <div class="col-lg-3 col-md-3 col-sm-6">
                 <div class="counter-box">
                   <div class="counter-no counter">
-                    700
+                    {{branches}}
                   </div>
                   <div class="counter-label">Branches</div>
                 </div>
@@ -410,7 +356,7 @@
               <div class="col-lg-3 col-md-3 col-sm-6">
                  <div class="counter-box">
                   <div class="counter-no counter">
-                    300
+                   {{something}}
                   </div>
                   <div class="counter-label">Clinic Rooms</div>
                 </div>
@@ -418,7 +364,7 @@
               <div class="col-lg-3 col-md-3 col-sm-6">
                  <div class="counter-box">
                   <div class="counter-no counter">
-                    350
+                    {{awards}}
                   </div>
                   <div class="counter-label">Awards</div>
                 </div>
@@ -426,7 +372,7 @@
               <div class="col-lg-3 col-md-3 col-sm-6">
                  <div class="counter-box">
                   <div class="counter-no counter">
-                    450
+                    {{missions}}
                   </div>
                   <div class="counter-label">Missions</div>
                 </div>
@@ -500,10 +446,10 @@
                       <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/secretary.jpg" />
+                       <!--    <img src="/media/main/images/secretary.jpg" /> -->
                           <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
                           <figcaption>
-                            <h2>Dr. S.P. Aggarwal </h2>
+                            <h2>Some Name </h2>
                             <p>Secretary</p>
                             <button>View</button>             
                           </figcaption>
@@ -653,36 +599,19 @@
               </div>
               <div class="testimonial-area">
                 <ul class="testimonial-nav">
+                {% for i,x in alert_data %}
                   <li>
                     <div class="single-testimonial">
                       <div class="testimonial-img">
-                        <img src="/media/main/images/patients-3.png" alt="img">
+                        <img src="/media/uploads/alerts/{{x}}" alt="img">
                       </div>
                       <div class="testimonial-cotent">
-                     <p class="testimonial-parg"> <a href="">Applications are invited for admission to the 11th batch of the PG Diploma course in Disaster Preparedness and Rehabilitation starting on Wednesday 10th August,2016. Last date of receipt of applications is 25th July 2016.</a></p>
+                     <p class="testimonial-parg"> <a href="">{{i}}</a></p>
                       </div>
                     </div>
                   </li> 
-                  <li>
-                    <div class="single-testimonial">
-                      <div class="testimonial-img">
-                        <img src="/media/main/images/patients-1.png" alt="img">
-                      </div>
-                      <div class="testimonial-cotent">
-                        <p class="testimonial-parg"> <a href="">View Chairman's message on World Red Cross Day, 2016</a></p>
-                      </div>
-                    </div>
-                  </li> 
-                  <li>
-                    <div class="single-testimonial">
-                      <div class="testimonial-img">
-                        <img src="/media/main/images/patients-2.png" alt="img">
-                      </div>
-                      <div class="testimonial-cotent">
-                        <p class="testimonial-parg"> <a href="">View <strong>Results</strong> of competition held on World Red Cross day, 2016</a></p>
-                      </div>
-                    </div>
-                  </li>                 
+                  {% endfor %}
+                                 
                 </ul>
               </div>
             </div>

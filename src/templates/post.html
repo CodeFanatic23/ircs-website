@@ -1,11 +1,13 @@
-{% extends "general.html" %}
+{% extends "base.html" %}
 
-{% block title_content %}
+{% block content %}
 <div class="section-heading">
                 <h2>{{title}}</h2>
                 <p>{{date}}</p>
                 <div class="line"></div>
               </div>
+              <div class="container">
               {{content|safe}}
+              </div>
 
 {% endblock %}

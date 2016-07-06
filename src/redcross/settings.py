@@ -25,12 +25,13 @@ SECRET_KEY = '03j)_z1yo#(nnj$dj_wf@quxp15(!tvsl6)20p1wk0bj3n4qh#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # 'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,11 +39,28 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #thid-party
+    'registration',
     'ckeditor',
     'ckeditor_uploader',
+    'easy_thumbnails',
+    'filer',
+    'mptt',
+    'crispy_forms',
+    'multiupload',
+    #mutant
+    # 'polymodels',
+    # 'mutant.contrib.boolean',
+    # 'mutant.contrib.temporal',
+    # 'mutant.contrib.file',
+    # 'mutant.contrib.numeric',
+    # 'mutant.contrib.text',
+    # 'mutant.contrib.web',
+    # 'mutant.contrib.related',
     #local
     'redcrossmain',
+    'bloodbank',
 ]
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,7 +78,7 @@ ROOT_URLCONF = 'redcross.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),os.path.join(BASE_DIR,'templates','bloodbank')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,3 +169,18 @@ CKEDITOR_CONFIGS = {
     },
 }
 
+THUMBNAIL_HIGH_RESOLUTION = True
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'easy_thumbnails.processors.autocrop',
+    #'easy_thumbnails.processors.scale_and_crop',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)
+
+FILER_CANONICAL_URL = 'sharing/'
+
+FILER_DEBUG=True
+
+ACCOUNT_ACTIVATION_DAYS = '7'

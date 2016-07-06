@@ -1,16 +1,19 @@
-<!-- BEGAIN PRELOADER -->
+ BEGAIN PRELOADER -->
     <div id="preloader">
       <div id="status">&nbsp;</div>
     </div>
     <!-- END PRELOADER -->
+
 
     <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"><i class="fa fa-heartbeat"></i></a>
     <!-- END SCROLL TOP BUTTON -->
 
     <!--=========== BEGIN HEADER SECTION ================-->
+
     <header id="header">
       <!-- BEGIN MENU -->
+
       <div class="menu_area">
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">  
           <div class="container">
@@ -24,33 +27,33 @@
               </button>
               <!-- LOGO -->              
               <!-- TEXT BASED LOGO -->
-              <a class="navbar-brand" href="index.html"><i class="fa fa-plus"></i> <span>IRCS</span></a>              
+              <a class="navbar-brand" href="index.html"><i class="fa fa-plus"></i> <span>Indian RedCross</span></a>              
               <!-- IMG BASED LOGO  -->
-               <!-- <a class="navbar-brand" href="index.html"><img src="/media/main/images/logo.png" alt="logo"></a>  -->                     
-            </div>
+               <!-- <a class="navbar-brand" href="{% url 'home' %}"><img src="/media/main/images/ircs_logo.png" height="50px" width="5px"alt="logo"></a> -->
+               </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class="active"><a href="{% url 'home' %}">Home</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">What We Do<span class="fa fa-angle-down"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="medical-counseling.html">Programs and Activities</a></li>
                     <li><a href="medical-research.html">Tracing Activities</a></li>
-                    <li><a href="blood-bank.html">Disaster Management</a></li>
+                    <li><a href="{% url 'dm' }">Disaster Management</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Get Involved<span class="fa fa-angle-down"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="membership.html">Membership</a></li>
-                    <li><a href="donation.html">Donate</a></li>
-                    <li><a href="features.html">Learn</a></li>
+                    <li><a href="{% url 'membership' %}">Membership</a></li>
+                    <li><a href="{% url 'donate' %}">Donate</a></li>
+                    <li><a href="{% url 'learn' %}">Learn</a></li>
                     <!-- <li><a href="blood-bank.html">Volunteer</a></li> -->
                     <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Volunteer <span class="fa fa-angle-down"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="medical-counseling.html">Youth/Junior Red Cross</a></li>
-                    <li><a href="medical-research.html">Community Volunteer</a></li>
+                    <li><a href="{% url 'volunteer' %}">Youth/Junior Red Cross</a></li>
+                    <li><a href="{% url 'volunteer' %}">Community Volunteer</a></li>
                   </ul>
                 </li>
                   </ul>
@@ -58,24 +61,24 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Media<span class="fa fa-angle-down"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="gallery.html">PhotoGallery</a></li>
-                    <li><a href="medical-research.html">News</a></li>
-                    <li><a href="blood-bank.html">Archive</a></li>
+                    <li><a href="{% url 'gallery' %}">PhotoGallery</a></li>
+                    <li><a href="{% url 'news' %}">News</a></li>
+                    <li><a href="{% url 'archive' %}">Archive</a></li>
                     <li><a href="blood-bank.html">Red Cross Stories</a></li>
                     <li><a href="blood-bank.html">Publications</a></li>
                   </ul>
                 </li>
                 
-                <li><a href="gallery.html">Blood Bank</a></li>
+                <li><a href="bloodbank">Blood Bank</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">Associations<span class="fa fa-angle-down"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="blog-archive.html">Association 1</a></li>
-                    <li><a href="blog-archive-with-left-sidebar.html">Association 2</a></li>
-                    <li><a href="blog-archive-with-right-sidebar.html">Association 3</a></li>
-                    <li><a href="blog-single.html">Association 4</a></li>
-                    <li><a href="blog-single-with-left-sidebar.html">Association 5</a></li>
-                    <li><a href="blog-single-with-right-sidebar.html">Association 6</a></li>           
+                    <li><a href="{% url 'stjohn' %}">St. Jones Ambulance</a></li>
+                    <li><a href="{% url 'icrc' %}">ICRC</a></li>
+                    <li><a href="{% url 'dm' %}">Disaster Management</a></li>
+                    <li><a href="bloodbank">Blood Bank</a></li>
+                    <!-- <li><a href="blog-single-with-left-sidebar.html">Association 5</a></li>
+                    <li><a href="blog-single-with-right-sidebar.html">Association 6</a></li>         -->   
                   </ul>
                 </li>
                 <li class="dropdown">
@@ -87,7 +90,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Branches  <span class="fa fa-angle-down"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="medical-counseling.html">National HeadQuarters</a></li>
-                    <li><a href="statebranches.html">State Branches</a></li>
+                    <li><a href="about/statebranches">State Branches</a></li>
                     <li><a href="#">Branch Rules</a></li>
                   </ul>
                 </li>
@@ -102,4 +105,3 @@
       </div>
       <!-- END MENU -->    
     </header>
-    <!--=========== END HEADER SECTION ================-->
