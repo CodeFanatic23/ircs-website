@@ -7,16 +7,22 @@ from .models import *
 class PostForm(forms.ModelForm):
 	CHOICES = (
         ('News', 'News'),
-        ('Red Cross Stories', 'Red Cross Stories'),
+        ('Red-Cross-Stories', 'Red Cross Stories'),
         ('Disaster', 'Disaster'),
         ('Relief', 'Relief'),
         ('Community', 'Community'),
-        ('General', 'General'),
+        # ('General', 'General'),
         ('Other','Other'),
     )
+	CHOICES_STATUS = (
+        ('Publish', 'Publish'),
+        ('Draft', 'Draft'),
+    )
+
 	title = forms.CharField(required=True)
 	content = forms.CharField(widget=CKEditorUploadingWidget())
 	category = forms.ChoiceField(choices=CHOICES)
+	status = forms.ChoiceField(choices=CHOICES_STATUS)
 
 
 # class UploadForm(forms.ModelForm):

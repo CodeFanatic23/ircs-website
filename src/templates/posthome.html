@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block style %}
+
+{% endblock %}
+
+{% block content %}
+{% for p in data %}
+<div class="single-Blog" style="background-color: #f7f7f7;">
+                          <div class="single-blog-left">
+                            <ul class="blog-comments-box">
+                               <li><strong>{{p.date|date:"d M Y"}}</strong></li>
+                               <li><h5>{{p.category}}</h5></li>
+                      
+                            </ul>
+                          </div>
+                          <div class="single-blog-right">
+                                                    
+                            <div class="blog-content">
+                              <h2>{{p.title}}</h2>
+                              <p>{{p.caption}}<strong><a href="{{p.category}}/{{p.title_slug}}">&nbsp;>>Read More
+                                <i class="fa fa-link"></i></a></strong>                              
+                              </p>
+                                 
+                              
+                            </div>
+                          </div>
+                        </div>
+
+{% endfor %}
+
+{% endblock %}
+
+{% block js %}
+
+
+{% endblock %}

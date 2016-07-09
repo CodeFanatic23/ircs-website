@@ -1,0 +1,11 @@
+{% if data.count > 0 %}
+
+{% for data in data %}
+<li><a href="{% url 'home' %}posts/{{data.object.category}}/{{data.object.titile_slug}}">{{data.object.title}}</li>
+
+{% endfor %}
+
+{% else %}
+<li>None to show!</li>
+
+{% endif %}

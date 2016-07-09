@@ -6,8 +6,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Fonts -->
+         
         {% include "bloodbank/menu_css.html" %}
-
+        {% include "menu_css.html" %}
 
     </head>
 
@@ -42,8 +43,8 @@
 
                   <h2 class="carousel-title bounceInDown animated slow">Because they need your help</h2>
                   <h4 class="carousel-subtitle bounceInUp animated slow "></h4>
-                  <a href="#" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated slow" data-toggle="modal" data-target="#donateModal">DONATE NOW</a>
-
+                  <!-- <a href="#" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated slow" data-toggle="modal" data-target="#donateModal">DONATE NOW</a>
+ -->
                 </div> <!-- /.carousel-caption -->
 
               </div>
@@ -61,7 +62,7 @@
 
                   <h2 class="carousel-title bounceInDown animated slow">Together we can improve their lives. So let's do it !</h2>
                   <h4 class="carousel-subtitle bounceInUp animated slow"> </h4>
-                  <a href="#" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated" data-toggle="modal" data-target="#donateModal">DONATE NOW</a>
+                  <!-- <a href="#" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated" data-toggle="modal" data-target="#donateModal">DONATE NOW</a> -->
 
                 </div> <!-- /.carousel-caption -->
 
@@ -82,7 +83,7 @@
 
                   <h2 class="carousel-title bounceInDown animated slow" >Do not let them down. You can make the diffrence !</h2>
                   <h4 class="carousel-subtitle bounceInUp animated slow"></h4>
-                  <a href="#" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated slow" data-toggle="modal" data-target="#donateModal">DONATE NOW</a>
+                  <!-- <a href="#" class="btn btn-lg btn-secondary hidden-xs bounceInUp animated slow" data-toggle="modal" data-target="#donateModal">DONATE NOW</a> -->
 
                 </div> <!-- /.carousel-caption -->
 
@@ -146,7 +147,7 @@ It has been running the largest Voluntary Blood Banks in India since 1962 and at
                           <p>Get to know about the goals of the blood bank and help us in achieving them...</p>
                           
                         </div>
-                        <a href="the_four1.html" class="btn btn-primary"> Read more </a>
+                        <a href="{% url '1' %}" class="btn btn-primary"> Read more </a>
                     
                   </div>
                   
@@ -166,7 +167,7 @@ It has been running the largest Voluntary Blood Banks in India since 1962 and at
                           <p>Blood is the river of life that flows through the human body. We cannot live without it... </p>
                           
                         </div>
-                        <a href="the_four2.html" class="btn btn-primary"> Read more </a>
+                        <a href="{% url '2' %}" class="btn btn-primary"> Read more </a>
                     
                   </div>
                   
@@ -186,7 +187,7 @@ It has been running the largest Voluntary Blood Banks in India since 1962 and at
                           <p>It is a process by which a blood donor voluntarily has blood drawn for storage in a blood bank...</p>
                           
                         </div>
-                        <a href="the_four3.html" class="btn btn-primary"> Read more </a>
+                        <a href="{% url '3' %}" class="btn btn-primary"> Read more </a>
                     
                   </div>
                   
@@ -206,7 +207,7 @@ It has been running the largest Voluntary Blood Banks in India since 1962 and at
                           <p>This is the space we have reserved for our loyal donors...</p>
                           
                         </div>
-                        <a href="the_four4.html" class="btn btn-primary"> Read more </a>
+                        <a href="{% url '4' %}" class="btn btn-primary"> Read more </a>
                     
                   </div>
                   
@@ -222,22 +223,7 @@ It has been running the largest Voluntary Blood Banks in India since 1962 and at
 <!-- THIS is my code , yo! -->
 <br>
      <h2 class="title-style-1">Upcoming Camps and Plans<span class="title-under"></span></h2>
-<!-- 
-<p> Indian Red Cross (NHQ) plans to upgrades and expands its Blood Bank into a ‘state of the art’ blood transfusion service and training facilities of the highest standards, as per national guidelines. </p>
 
- 
-<p>
-Specific project Objective: The capacity and sustainability of the IRCS NHQ blood bank is enhanced to better meet the demand for safer, appropriate and timely blood and blood components. </p>
- 
- 
-<p>
-•Target: Significant quantitative and qualitative changes as measured against ISBT code of ethics, WHO guidelines and NACO standards and aspirations for ‘model blood banks’ between baseline and project end. </p>
- 
-<p>
-It is proposed that the “Indian Red Cross upgrades and expands its Blood Bank in the metropolitan cities (Mumbai, Kolkata, Ahmedabad, Chennai) with State-of-the-art facilities & training facilities in order to meet the demand by providing Safe and Standardized screened blood/blood components”
-</p>
- -->
- 
 
     <div class="section-home home-reasons">
 
@@ -310,328 +296,95 @@ It is proposed that the “Indian Red Cross upgrades and expands its Blood Bank 
         </div>
       
 
-    </div> <!-- /.home-reasons -->
+    
+    
 
-    <div class="section-home our-causes animate-onscroll fadeIn">
 
+    <!--=========== Start Footer SECTION ================-->
+     <footer id="footer">
+      <!-- Start Footer Top -->
+      <div class="footer-top">
         <div class="container">
-
-            <h2 class="title-style-1">News and Updates<span class="title-under"></span></h2>
-
-            <div class="row">
-
-                <div class="col-md-3 col-sm-6">
-
-                    <div class="cause">
-
-                        <img src="/static/bloodbank/images/causes/cause-hunger.jpg" alt="" class="cause-img">
-
-                        <div class="progress cause-progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
-                            10$ / 500$
-                          </div>
-                        </div>
-
-                        <h4 class="cause-title"><a href="#">HUNGER AND POVERTY </a></h4>
-                        <div class="cause-details">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.
-                        </div>
-
-                        <div class="btn-holder text-center">
-
-                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#donateModal"> DONATE NOW</a>
-                          
-                        </div>
-
-                        
-
-                    </div> <!-- /.cause -->
-                    
-                </div> 
-
-                <div class="col-md-3 col-sm-6">
-
-                    <div class="cause">
-
-                        <img src="/static/bloodbank/images/causes/cause-education.jpg" alt="" class="cause-img">
-
-                        <div class="progress cause-progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            400$ / 700$
-                          </div>
-                        </div>
-
-                        <h4 class="cause-title"><a href="#">EDUCATION AND TRAINING</a></h4>
-                        <div class="cause-details">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.
-                        </div>
-
-                        <div class="btn-holder text-center">
-
-                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#donateModal"> DONATE NOW</a>
-                          
-                        </div>
-
-                        
-
-                    </div> <!-- /.cause -->
-                    
-                </div>
-
-
-                <div class="col-md-3 col-sm-6">
-
-                    <div class="cause">
-
-                        <img src="/static/bloodbank/images/causes/cause-rights.jpg" alt="" class="cause-img">
-
-                        <div class="progress cause-progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                            400$ / 1000$
-                          </div>
-                        </div>
-
-                        <h4 class="cause-title"><a href="#">HUMAN RIGHTS</a></h4>
-                        <div class="cause-details">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.
-                        </div>
-
-                        <div class="btn-holder text-center">
-
-                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#donateModal"> DONATE NOW</a>
-                          
-                        </div>
-
-                        
-
-                    </div> <!-- /.cause -->
-                    
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-
-                    <div class="cause">
-
-                        <img src="/static/bloodbank/images/causes/cause-culture.jpg" alt="" class="cause-img">
-
-                        <div class="progress cause-progress">
-                          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                            400$ / 700$
-                          </div>
-                        </div>
-
-                        <h4 class="cause-title"><a href="#">ARTS AND CULTURE </a></h4>
-                        <div class="cause-details">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at eros rutrum turpis viverra elementum semper quis ex. Donec lorem nulla, aliquam quis neque vel, maximus lacinia urna.
-                        </div>
-
-                        <div class="btn-holder text-center">
-
-                          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#donateModal"> DONATE NOW</a>
-                          
-                        </div>
-
-                        
-
-                    </div> <!-- /.cause -->
-                    
-                </div>
-
+          <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="single-footer-widget">
+                <div class="section-heading">
+                <p>About Us</p>
+                <div class="line"></div>
+              </div>           
+              <p>Indian Red Cross Society has been running the largest Voluntary Blood Banks in India since 1962 and at present contributing 10% of the total blood collection through its 110 blood bank centers across the country. Blood and Blood products are issued free of cost to the Thalassemic and Haemophilic patients and to Government hospitals.</p>
+              </div>
             </div>
-
+            <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="single-footer-widget">
+                <div class="section-heading">
+                <p>Quick Links</p>
+                <div class="line"></div>
+              </div>
+              <ul class="footer-service">
+                <li><a href="#"><span class="fa fa-check"></span>First Medical Responders(FMR)</a></li>
+                <li><a href="#"><span class="fa fa-check"></span>St. Jones Ambulance</a></li>
+                <li><a href="#"><span class="fa fa-check"></span>Disaster Management</a></li>
+                <li><a href="#"><span class="fa fa-check"></span>Blood Bank</a></li>
+                <li><a href="#"><span class="fa fa-check"></span>Donate</a></li>
+                <li><a href="#"><span class="fa fa-check"></span>Volunteer</a></li>
+              </ul>
+              </div>
+            </div>
+            <!-- <div class="col-lg-3 col-md-3 col-sm-3">
+              <div class="single-footer-widget">
+                <div class="section-heading">
+                <h2>Tags</h2>
+                <div class="line"></div>
+              </div>
+                <ul class="tag-nav">
+                  <li><a href="#">Dental</a></li>
+                  <li><a href="#">Surgery</a></li>
+                  <li><a href="#">Pediatric</a></li>
+                  <li><a href="#">Cardiac</a></li>
+                  <li><a href="#">Ophthalmology</a></li>
+                  <li><a href="#">Diabetes</a></li>
+                </ul>
+              </div>
+            </div> -->
+            <div class="col-lg-4 col-md-4 col-sm-4">
+              <div class="single-footer-widget">
+                <div class="section-heading">
+                <p>Contact Info</p>
+                <div class="line"></div>
+              </div>
+              <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+              <address class="contact-info">
+                <p><span class="fa fa-home"></span>Indian Red Cross National HQ,Central Secretariat,New Delhi</p>
+                <p><span class="fa fa-phone"></span>phone no.</p>
+                <p><span class="fa fa-envelope"></span>info@indianredcross.org</p>
+              </address>
+              </div>
+            </div>
+          </div>
         </div>
-        
-    </div> <!-- /.our-causes -->
-
-    
-
-
-<!-- 
-
-    <div class="section-home our-sponsors animate-onscroll fadeIn">
-    
+      </div>
+      <!-- Start Footer Middle -->
+      <div class="footer-middle">
         <div class="container">
-
-            <h2 class="title-style-1">Our Sponsors <span class="title-under"></span></h2>
-
-            <ul class="owl-carousel list-unstyled list-sponsors">
-
-              <li> <img src="/static/bloodbank/images/sponsors/bus.png" alt=""></li>
-              <li> <img src="/static/bloodbank/images/sponsors/wikimedia.png" alt=""></li>
-              <li> <img src="/static/bloodbank/images/sponsors/one-world.png" alt=""></li>
-              <li> <img src="/static/bloodbank/images/sponsors/wikiversity.png" alt=""></li>
-              <li> <img src="/static/bloodbank/images/sponsors/united-nations.png" alt=""></li>
-
-              <li> <img src="/static/bloodbank/images/sponsors/bus.png" alt=""></li>
-              <li> <img src="/static/bloodbank/images/sponsors/wikimedia.png" alt=""></li>
-              <li> <img src="/static/bloodbank/images/sponsors/one-world.png" alt=""></li>
-              <li> <img src="/static/bloodbank/images/sponsors/wikiversity.png" alt=""></li>
-              <li> <img src="/static/bloodbank/images/sponsors/united-nations.png" alt=""></li>
-
-            </ul>
-
-        </div>
-
-    </div> <!-- /.our-sponsors -->
-
- -->
-    
-
-
-    <footer class="main-footer">
-
-        <div class="footer-top">
-            
-        </div>
-
-
-        <div class="footer-main">
-            <div class="container">
-                
-                <div class="row">
-                    <div class="col-md-4">
-
-                        <div class="footer-col">
-
-                            <h4 class="footer-title">About us <span class="title-under"></span></h4>
-
-                            <div class="footer-content">
-                                <p>
-                                     <strong>IRCS</strong> participates actively in the community welfare programmes in the pre- disaster phase and performs initiatives like relief work and voluntary blood donation during the disasters.
-                                </p>
-
-                                <p>
-                                    It has been running the largest Voluntary Blood Banks in India since 1962 and at present contributing 10% of the total blood collection through its 108 blood bank centers across the country. Blood and Blood products are issued free of cost to the Thalassemic and Haemophilic patients and to Government hospitals.
-                                </p> 
-
-                               
-
-                            </div>
-                            
-                        </div>
-
-                    </div>
-
-                    <div class="col-md-4">
-
-                        <div class="footer-col">
-
-                            <h4 class="footer-title">Facebook feed <span class="title-under"></span></h4>
-
-                            <div class="footer-content">
-                                <ul class="tweets list-unstyled">
-                                    <li class="tweet"> 
-
-                                        20 Surprise Eggs, Kinder Surprise Cars 2 Thomas Spongebob Disney Pixar  http://t.co/fTSazikPd4 
-
-                                    </li>
-
-                                    <li class="tweet"> 
-
-                                        20 Surprise Eggs, Kinder Surprise Cars 2 Thomas Spongebob Disney Pixar  http://t.co/fTSazikPd4 
-
-                                    </li>
-
-                                    <li class="tweet"> 
-
-                                        20 Surprise Eggs, Kinder Surprise Cars 2 Thomas Spongebob Disney Pixar  http://t.co/fTSazikPd4 
-
-                                    </li>
-
-                                </ul>
-                            </div>
-                            
-                        </div>
-
-                    </div>
-
-
-                    <div class="col-md-4">
-
-                        <div class="footer-col">
-
-                            <h4 class="footer-title">Contact us <span class="title-under"></span></h4>
-
-                            <p> The Indian Red Cross Society Blood Bank
-
-(National Headquarters) </p>
-
-<p> 1, Red Cross Road </p>
-<p>New Delhi-110001</p>
-
-<p>Tel.23711551,23717454 </p>
-
-<p> Fax.23717063 </p>
-
-<p> www.indianredcrosssociety.org/bloodbank
-</p>
-
-                            <!-- <div class="footer-content">
-
-                                <div class="footer-form">
-                                    
-                                    <div class="footer-form" >
-                                    
-                                    <form action="php/mail.php" class="ajax-form">
-
-                                        <div class="form-group">
-                                            <input type="text" name="name" class="form-control" placeholder="Name" required>
-                                        </div>
-
-                                         <div class="form-group">
-                                            <input type="email" name="email" class="form-control" placeholder="E-mail" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <textarea name="message" class="form-control" placeholder="Message" required></textarea>
-                                        </div>
-
-                                        <div class="form-group alerts">
-                        
-                                            <div class="alert alert-success" role="alert">
-                                              
-                                            </div>
-
-                                            <div class="alert alert-danger" role="alert">
-                                              
-                                            </div>
-                                            
-                                        </div>
-
-                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-submit pull-right">Send message</button>
-                                        </div>
-                                        
-                                    </form>
-
-                                </div>
-
-                                </div>
-                            </div>
-                             -->
-                        </div>
-
-                    </div>
-                    <div class="clearfix"></div>
-
-
-
-                </div>
-                
-                
+          <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="footer-copyright">
+              <p>&copy; Copyright 2016 <a href="index.html">Indian Red Cross Society</a></p>
             </div>
-
-            
-        </div>
-
-        <div class="footer-bottom">
-
-            <div class="container text-right">
-              Indian Red Cross Society @ copyrights 2016 <a href="http://www.indianredcross.org/" target="_blank" >
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="footer-social">              
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <!-- <a href="#"><span class="fa fa-google-plus"></span></a>
+                <a href="#"><span class="fa fa-linkedin"></span></a>   -->   
             </div>
+          </div>
         </div>
-        
-    </footer> <!-- main-footer -->
+        </div>
+      </div>
+  <!--=========== End Footer SECTION ================-->
 
 
 

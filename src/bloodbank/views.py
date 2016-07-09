@@ -14,3 +14,16 @@ def gallery(request):
 
 def about(request):
 	return render(request,"bloodbank/about.html")
+
+def one(request):
+	print("hello")
+	return render(request,"bloodbank/the_four1.html")
+
+def two(request):
+	return render(request,"bloodbank/the_four2.html")
+
+def three(request):
+	return render(request,"bloodbank/the_four3.html")
+
+def four(request):
+	return render(request,"bloodbank/the_four4.html")

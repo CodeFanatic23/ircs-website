@@ -21,7 +21,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]--> 
   </head>
-  <body>  
+  <body style="background-color: #f7f7f7;">  
     
        {% include "menu.html" %}
 
@@ -38,9 +38,11 @@
           <div class="slider-text">
             <h2>{{slider_text_1}} <strong>{{slider_text_2}}</strong> {{slider_text_3}}</h2>
             <p><strong>IRCS</strong> {{slider_text_4}}</p>
+            {% if read_more %}
             <div class="readmore_area">
-              <a data-hover="Read More" href="#"><span>Read More</span></a>                
+              <a data-hover="Read More" target="_blank" href="{{slider_read_more}}"><span>Read More</span></a>                
             </div>
+            {% endif %}
           </div>
         </div>
         {% endfor %}
@@ -52,134 +54,43 @@
     </section>
     <!--=========== END SLIDER SECTION ================-->
 
-    <!--=========== BEGIN Top Feature SECTION ================-->
-   <!--  <section id="topFeature">
-      <div class="row"> -->
-        <!-- Start Single Top Feature -->
-        <!-- <div class="col-lg-4 col-md-4">
-          <div class="row">
-            <div class="single-top-feature">
-              <span class="fa fa-flask"></span>
-              <h3>Emergency Care</h3>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-              <div class="readmore_area">
-                <a href="#" data-hover="Read More"><span>Read More</span></a>
-              </div>
-            </div>
-          </div>
-        </div> -->
-        <!-- End Single Top Feature -->
-         
-        <!-- Start Single Top Feature -->
-        <!-- <div class="col-lg-4 col-md-4">
-          <div class="row">
-            <div class="single-top-feature opening-hours">
-              <span class="fa fa-clock-o"></span>
-              <h3>Opening Hours</h3>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh.</p>
-              <ul class="opening-table">
-                <li>
-                  <span>Monday - Friday</span>
-                  <div class="value">8.00 - 16.00</div>
-                </li>
-                <li>
-                  <span>Saturday</span>
-                  <div class="value">9.30 - 15.30</div>
-                </li>
-                <li>
-                  <span>Sunday</span>
-                  <div class="value">9.30 - 17.00</div>
-                </li>
-              </ul>              
-            </div>
-          </div>
-        </div> -->
-        <!-- End Single Top Feature -->
-
-        <!-- Start Single Top Feature -->
-        <!-- <div class="col-lg-4 col-md-4">
-          <div class="row">
-            <div class="single-top-feature">
-              <span class="fa fa-hospital-o"></span>
-              <h3>Appointment</h3>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-              <div class="readmore_area">
-                <a data-toggle="modal" data-target="#myModal" href="#" data-hover="Appoinment"><span>Appoinment</span></a>    
-              </div> -->
-              <!-- start modal window -->
-              <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                      <h4 class="modal-title" id="myModalLabel">Appoinment Details</h4>
-                    </div>
-                    <div class="modal-body">
-                      <div class="appointment-area">
-                        <form class="appointment-form">
-                          <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                              <label class="control-label">Your name <span class="required">*</span>
-                              </label>
-                              <input type="text" class="wp-form-control wpcf7-text" placeholder="Your name">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                              <label class="control-label">Your Email <span class="required">*</span>
-                              </label>
-                              <input type="mail" class="wp-form-control wpcf7-email" placeholder="Email address">  
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                              <label class="control-label">Your Birth <span class="required">*</span>
-                              </label>
-                              <input type="text" class="wp-form-control wpcf7-text" placeholder="dd/mm/yy">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                              <label class="control-label">Your Phone <span class="required">*</span>
-                              </label>
-                              <input type="text" class="wp-form-control wpcf7-text" placeholder="Phone No">  
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                              <label class="control-label">Appointment Date <span class="required">*</span>
-                              </label>
-                              <input type="text" class="wp-form-control wpcf7-text" placeholder="dd/mm/yy">
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                              <label class="control-label">Select Department <span class="required">*</span>
-                              </label>
-                              <select class="wp-form-control wpcf7-select">
-                                <option val="1">Dental</option>
-                                <option val="2">cardiology</option>
-                                <option val="3">neurology</option>
-                                <option val="4">Drugstore</option>
-                                <option val="5">x-ray</option>
-                                <option val="6">birth</option>
-                                <option val="7">general</option>
-                                <option val="8">testing</option>
-                                <option val="9">first-aid</option>
-                                <option val="10">immunizations</option><option val="11">pulmonary</option>
-                              </select> 
-                            </div>
-                          </div>         
-                          <input type="text" class="wp-form-control wpcf7-text" placeholder="Subject">
-                          <textarea class="wp-form-control wpcf7-textarea" cols="30" rows="10" placeholder="What would you like to tell us"></textarea>
-                         <button class="wpcf7-submit button--itzel" type="submit"><i class="button__icon fa fa-share"></i><span>Book Appointment</span></button>  
-                        </form>
-                      </div>
-                    </div>  -->                   
-                 <!--  </div>< /.modal-content -->
-                <!-- </div>/.modal-dialog
-              </div> --><!-- /.modal -->
-            <!-- </div>
-          </div>
-        </div> -->
-        <!-- End Single Top Feature -->
+    
       </div>
     </section>
     <!--=========== END Top Feature SECTION ================-->
+
+    <div class="container" style="background-color: #f7f7f7;margin-right: 9%;margin-left: 9%;">
+    
+    <!-- <div class="alert" style="padding:10px;font-weight: bold;">
+    <marquee>
+      {% for al in alert %}
+    <p>{{al}}</p>
+    {% endfor %}</marquee>
+
+    </div> -->
+    
+    <div id="page-wrap">
+      {% for al in alert %}
+    <div class="info-col">
+
+        
+
+        <a class="image superman" href=""></a>
+
+        <dl>
+          <dt style="background-color: #BAB3B3;">Alert</dt>
+          <dd><a href="">{{al}}</a></dd>
+
+        </dl>
+
+    </div>
+{% endfor %}
+        
+  </div>
+
+   
+    
+    </div>
 
     <!--=========== BEGIN Service SECTION ================-->
     <section id="service">
@@ -193,7 +104,7 @@
                 <div class="line"></div>
               </div>
               <!-- Start Service Content -->
-              <div class="service-content">
+              <div class="service-content" style="width: 100%;">
                 <div class="row">
                   <!-- Start Single Service -->
                   <div class="col-lg-4 col-md-4">
@@ -201,8 +112,8 @@
                       <div class="service-icon">
                         <span class="fa fa-stethoscope service-icon-effect"></span>  
                       </div>                      
-                      <h3><a href="#">FMR</a></h3>
-                      <p>{{fmr_description}}</p>
+                      <h3><a href="{% url 'home' %}fmr">FMR</a></h3>
+                      <p class="genp">{{fmr_description}}</p>
                     </div>
                   </div>
                   <!-- Start Single Service -->
@@ -211,7 +122,7 @@
                       <div class="service-icon">
                         <span class="fa fa-heartbeat service-icon-effect"></span>  
                       </div>                      
-                      <h3><a href="#">Blood Bank</a></h3>
+                      <h3><a href="{% url 'home' %}bloodbank">Blood Bank</a></h3>
                       <p>{{bloodbank_description}}</p>
                     </div>
                   </div>
@@ -221,14 +132,14 @@
                       <div class="service-icon">
                         <span class="fa fa-h-square service-icon-effect"></span>  
                       </div>                      
-                      <h3><a href="#">Disaster Management</a></h3>
+                      <h3><a href="{% url 'home' %}disastermanagement">Disaster Management</a></h3>
                       <p>{{dm_description}}</p>
                     </div>
                   </div>
                   <!-- Start Single Service -->
                   
                   <!-- Start Single Service -->
-                  <div class="col-lg-4 col-md-4">
+                  <div class="col-lg-4 col-md-4" >
                     <div class="single-service">
                       <!-- <div class="service-icon">
                         <span class="fa fa-user-md service-icon-effect"></span>  
@@ -242,7 +153,7 @@
                       <div class="service-icon">
                         <span class="fa fa-ambulance service-icon-effect"></span>  
                       </div>                      
-                      <h3><a href="#">St Jones Ambulance</a></h3>
+                      <h3><a href="{% url 'home' %}stjohn">St Jones Ambulance</a></h3>
                       <p>{{st_john_description}}</p>
                     </div>
                   </div>
@@ -299,7 +210,7 @@
                 <div class="whyChoose-right">
                   <div class="media">
                     <div class="media-left">
-                      <a href="newsletter" class="media-icon">
+                      <a href="/media/uploads/newsletter/{{newsletter}}" name="plugin" class="media-icon" type="application/pdf">
                         <span class="fa fa-newspaper-o"></span>
                       </a>
                     </div>
@@ -401,21 +312,16 @@
                     <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/president.jpg" />
-                          <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                          <img src="/media/main/images/president.jpg" height="300px" width="230px" />
+                          
                           <figcaption>
                             <h2>Pranab Mukherji</h2>
                             <p>President</p>
-                            <!-- <button>View</button> -->             
+                            <button>View</button>             
                           </figcaption>
                         </figure>
                       </a>
-                      <div class="single-doctor-social">
-                        <a href="#"><span class="fa fa-facebook"></span></a>
-                        <a href="#"><span class="fa fa-twitter"></span></a>
-                       <!--  <a href="#"><span class="fa fa-google-plus"></span></a>
-                        <a href="#"><span class="fa fa-linkedin"></span></a> -->
-                      </div>
+                     
                     </div>
                   </li>
                   <li>
@@ -423,8 +329,8 @@
                       <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/chairman.jpg" />
-                          <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                          <img src="/media/main/images/chairman.jpg" height="300px" width="230px" />
+                          
                           <figcaption>
                             <h2>J.P Nadda</h2>
                             <p>Chairman</p>
@@ -432,12 +338,7 @@
                           </figcaption>
                         </figure>
                       </a>
-                      <div class="single-doctor-social">
-                        <a href="#"><span class="fa fa-facebook"></span></a>
-                        <a href="#"><span class="fa fa-twitter"></span></a>
-                        <!-- <a href="#"><span class="fa fa-google-plus"></span></a>
-                        <a href="#"><span class="fa fa-linkedin"></span></a> -->
-                      </div>
+                    
                     </div>
                     </div>
                   </li>
@@ -446,21 +347,16 @@
                       <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                       <!--    <img src="/media/main/images/secretary.jpg" /> -->
-                          <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                          <img src="/media/main/images/secretary.jpg" height="300px" width="230px"/>
+                      
                           <figcaption>
                             <h2>Some Name </h2>
-                            <p>Secretary</p>
+                            <p>Vice Chairman</p>
                             <button>View</button>             
                           </figcaption>
                         </figure>
                       </a>
-                      <div class="single-doctor-social">
-                        <a href="#"><span class="fa fa-facebook"></span></a>
-                        <a href="#"><span class="fa fa-twitter"></span></a>
-                        <!-- <a href="#"><span class="fa fa-google-plus"></span></a>
-                        <a href="#"><span class="fa fa-linkedin"></span></a> -->
-                      </div>
+                      
                     </div>
                     </div>
                   </li>
@@ -469,8 +365,7 @@
                       <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/logo.jpg" />
-                          <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                          <img src="/media/main/images/vice-chairman.jpg" height="300px" width="230px"/>
                           <figcaption>
                             <h2>Dr. Veer Bhushan</h2>
                             <p>Joint Secretary</p>
@@ -478,12 +373,6 @@
                           </figcaption>
                         </figure>
                       </a>
-                      <div class="single-doctor-social">
-                        <a href="#"><span class="fa fa-facebook"></span></a>
-                        <a href="#"><span class="fa fa-twitter"></span></a>
-                        <!-- <a href="#"><span class="fa fa-google-plus"></span></a>
-                        <a href="#"><span class="fa fa-linkedin"></span></a> -->
-                      </div>
                     </div>
                     </div>
                   </li>
@@ -491,135 +380,25 @@
                     <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/doctor-1.jpg" />
-                          <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
+                          <img src="/media/main/images/joint-secy.jpg" height="300px" width="230px"/>
+                          
                           <figcaption>
-                            <h2>Anyone else</h2>
-                            <p>Description</p>
+                            <h2>Secretary</h2>
+                            <p>Designation</p>
                             <button>View</button>             
                           </figcaption>
                         </figure>
                       </a>
-                      <div class="single-doctor-social">
-                        <a href="#"><span class="fa fa-facebook"></span></a>
-                        <a href="#"><span class="fa fa-twitter"></span></a>
-                        <!-- <a href="#"><span class="fa fa-google-plus"></span></a>
-                        <a href="#"><span class="fa fa-linkedin"></span></a> -->
-                      </div>
+                   
                     </div>
                   </li>
                   <li>
-                   <!--  <div class="single-doctor">
-                      <div class="single-doctor">
-                      <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
-                        <figure>
-                          <img src="/media/main/images/doctor-2.jpg" />
-                          <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
-                          <figcaption>
-                            <h2>DR. Jack Johnson</h2>
-                            <p>Rehabilitation Therapy</p>
-                            <button>View</button>             
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <div class="single-doctor-social">
-                        <a href="#"><span class="fa fa-facebook"></span></a>
-                        <a href="#"><span class="fa fa-twitter"></span></a>
-                        <a href="#"><span class="fa fa-google-plus"></span></a>
-                        <a href="#"><span class="fa fa-linkedin"></span></a>
-                      </div>
-                    </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="single-doctor">
-                      <div class="single-doctor">
-                      <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
-                        <figure>
-                          <img src="/media/main/images/doctor-3.jpg" />
-                          <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
-                          <figcaption>
-                            <h2>Dr. Vanessa Smouic</h2>
-                            <p>Cardiac Clinic</p>
-                            <button>View</button>             
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <div class="single-doctor-social">
-                        <a href="#"><span class="fa fa-facebook"></span></a>
-                        <a href="#"><span class="fa fa-twitter"></span></a>
-                        <a href="#"><span class="fa fa-google-plus"></span></a>
-                        <a href="#"><span class="fa fa-linkedin"></span></a>
-                      </div>
-                    </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="single-doctor">
-                      <div class="single-doctor">
-                      <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
-                        <figure>
-                          <img src="/media/main/images/doctor-5.jpg" />
-                          <svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="M 180,160 0,218 0,0 180,0 z"/></svg>
-                          <figcaption>
-                            <h2>Dr. David Gresshoff</h2>
-                            <p>Laryngological Clinic</p>
-                            <button>View</button>             
-                          </figcaption>
-                        </figure>
-                      </a>
-                      <div class="single-doctor-social">
-                        <a href="#"><span class="fa fa-facebook"></span></a>
-                        <a href="#"><span class="fa fa-twitter"></span></a>
-                        <a href="#"><span class="fa fa-google-plus"></span></a>
-                        <a href="#"><span class="fa fa-linkedin"></span></a>
-                      </div>
-                    </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
+                   
     </section>
     <!--=========== End Doctors SECTION ================-->
 
-    <!--=========== BEGAIN Testimonial SECTION ================-->
-    <section id="testimonial">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 col-md-12">
-            <div class="testimonial-area">
-             <!-- Start Service Title -->
-              <div class="section-heading">
-                <h2>Alerts</h2>
-                <div class="line"></div>
-              </div>
-              <div class="testimonial-area">
-                <ul class="testimonial-nav">
-                {% for i,x in alert_data %}
-                  <li>
-                    <div class="single-testimonial">
-                      <div class="testimonial-img">
-                        <img src="/media/uploads/alerts/{{x}}" alt="img">
-                      </div>
-                      <div class="testimonial-cotent">
-                     <p class="testimonial-parg"> <a href="">{{i}}</a></p>
-                      </div>
-                    </div>
-                  </li> 
-                  {% endfor %}
-                                 
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--=========== End Testimonial SECTION ================-->
+    
+    
 
     <!--=========== BEGAIN Home Blog SECTION ================-->
     <section id="homeBLog">
@@ -636,19 +415,19 @@
               <div class="homeBlog-content">
                 <div class="row">
                   <!-- Start Single Blog -->
+                  {% for a,b,c,d,e,f in newsdata%}
                   <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="single-Blog">
                       <div class="single-blog-left">
                         <ul class="blog-comments-box">
-                          <li>June <h2>22</h2>2016</li>
+                          <li>{{d}}<h2>{{e}}</h2>{{f}}</li>
                           <li><span class="fa fa-eye"></span>1523</li>
-                          <li><a href="#"><span class="fa fa-comments"></span>5</a></li>
                         </ul>
                       </div>
                       <div class="single-blog-right">
                         <div class="blog-img">
                           <figure class="blog-figure">
-                           <a href="#"><img src="/media/main/images/news1.jpg" alt="img"></a>
+                           <a href="posts/news/{{c}}"><img src="/media/main/images/news1.jpg" alt="img"></a>
                             <span class="image-effect"></span>
                           </figure>
                         </div>
@@ -659,81 +438,16 @@
                           </ul>
                         </div> -->
                         <div class="blog-content">
-                          <h2>Vice Chairman Calls on Rajasthan Governor</h2>
-                          <p>The Hon’ble Vice Chairman of the Indian Red Cross Society, Shri Avinash Rai Khanna, called on the Governor of Rajasthan, H.E. Shri Kalyan Singh, who is also the President of the Rajasthan State Red Cross on 16 June 2016.</p>
+                          <h2>{{a}}</h2>
+                          <p>{{b}}</p>
                           <div class="readmore_area">
-                            <a href="#" data-hover="Read More"><span>Read More</span></a>                
+                            <a href="posts/news/{{c}}" data-hover="Read More"><span>Read More</span></a>                
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                   <!-- Start Single Blog -->
-                  <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="single-Blog">
-                      <div class="single-blog-left">
-                        <ul class="blog-comments-box">
-                          <li>June <h2>21</h2>2016</li>
-                          <li><span class="fa fa-eye"></span>1523</li>
-                          <li><a href="#"><span class="fa fa-comments"></span>5</a></li>
-                        </ul>
-                      </div>
-                      <div class="single-blog-right">
-                         <div class="blog-img">
-                          <figure class="blog-figure">
-                           <a href="#"><img src="/media/main/images/news2.jpg" alt="img"></a>
-                            <span class="image-effect"></span>
-                          </figure>
-                        </div>
-                        <!-- <div class="blog-author">
-                          <ul>
-                            <li>By <a href="#">Dr. Smith</a></li>
-                            <li>In <a href="#">Dental</a></li>
-                          </ul>
-                        </div> -->
-                        <div class="blog-content">
-                          <h2>International Yoga Day</h2>
-                          <p>Indian Red Cross Society, National Headquarters, observed International Day of Yoga at the precincts of its office complex. A number of people from IRCS, IFRC, CMSS, DHR & IDBI office staff took part in the Yoga Shivir.</p>
-                          <div class="readmore_area">
-                            <a href="#" data-hover="Read More"><span>Read More</span></a>                
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                   <!-- Start Single Blog -->
-                  <div class="col-lg-4 col-md-4 col-sm-4">
-                    <div class="single-Blog">
-                      <div class="single-blog-left">
-                        <ul class="blog-comments-box">
-                          <li>May <h2>5</h2>2016</li>
-                          <li><span class="fa fa-eye"></span>1523</li>
-                          <li><a href="#"><span class="fa fa-comments"></span>5</a></li>
-                        </ul>
-                      </div>
-                      <div class="single-blog-right">
-                         <div class="blog-img">
-                          <figure class="blog-figure">
-                           <a href="#"><img src="/media/main/images/news3.jpg" alt="img"></a>
-                            <span class="image-effect"></span>
-                          </figure>
-                        </div>
-                        <!-- <div class="blog-author">
-                          <ul>
-                            <li>By <a href="#">Dr. Smith</a></li>
-                            <li>In <a href="#">Dental</a></li>
-                          </ul>
-                        </div> -->
-                        <div class="blog-content">
-                          <h2>IRCS - University College Dublin Join Hands</h2>
-                          <p>On 10 May 2016 a new chapter was added to the glorious history of the Indian Red Cross. The President of the University College of Dublin, Ireland, Prof Andrew Deeks, Head, International Affairs, Irish Red Cross, Mr John Roche and the Acting Secretary General of the Indian Red Cross Society, Dr Veer Bhushan signed a Memorandum of Understanding</p>
-                          <div class="readmore_area">
-                            <a href="#" data-hover="Read More"><span>Read More</span></a>                
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </div>
               </div>             
             </div>
@@ -744,7 +458,7 @@
     <!--=========== End Home Blog SECTION ================-->
 
     <!--=========== Start Footer SECTION ================-->
-    <footer id="footer">
+    <footer id="footer" style="margin-bottom: -150px;">
       <!-- Start Footer Top -->
       <div class="footer-top">
         <div class="container">
@@ -755,7 +469,7 @@
                 <h2>About Us</h2>
                 <div class="line"></div>
               </div>           
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+              <p>Indian Red Cross Society has been running the largest Voluntary Blood Banks in India since 1962 and at present contributing 10% of the total blood collection through its 110 blood bank centers across the country. Blood and Blood products are issued free of cost to the Thalassemic and Haemophilic patients and to Government hospitals.</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3">
@@ -765,12 +479,12 @@
                 <div class="line"></div>
               </div>
               <ul class="footer-service">
-                <li><a href="#"><span class="fa fa-check"></span>First Medical Responders(FMR)</a></li>
-                <li><a href="#"><span class="fa fa-check"></span>St. Jones Ambulance</a></li>
-                <li><a href="#"><span class="fa fa-check"></span>Disaster Management</a></li>
-                <li><a href="#"><span class="fa fa-check"></span>Blood Bank</a></li>
-                <li><a href="#"><span class="fa fa-check"></span>Donate</a></li>
-                <li><a href="#"><span class="fa fa-check"></span>Volunteer</a></li>
+                <li><a href="{% url 'home' %}fmr"><span class="fa fa-check"></span>First Medical Responders(FMR)</a></li>
+                <li><a href="{% url 'home' %}stjohn"><span class="fa fa-check"></span>St. Jones Ambulance</a></li>
+                <li><a href="{% url 'home' %}disastermanagement"><span class="fa fa-check"></span>Disaster Management</a></li>
+                <li><a href="{% url 'home' %}bloodbank"><span class="fa fa-check"></span>Blood Bank</a></li>
+                <li><a href="{% url 'home' %}donate"><span class="fa fa-check"></span>Donate</a></li>
+                <li><a href="{% url 'home' %}volunteer"><span class="fa fa-check"></span>Volunteer</a></li>
               </ul>
               </div>
             </div>

@@ -4,11 +4,20 @@ from .forms import *
 
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
-	list_display = ['title','category','date']
+	list_display = ['title','category','date','Status']
 	search_fields = ['title','category']
-	list_filter = ['category']
-	
+	list_filter = ['category','status']
+	actions = ['preview']
 	# model = Post
+	def Status(self,obj):
+		if obj.status == 'Publish':
+			return obj.status + 'ed'
+		else:
+			return obj.status
+
+	# def preview(modeladmin, request, queryset):
+	# 	get queryset by last updated
+	# 	return  render(request,"post.html",context)
 	form = PostForm
 
 admin.site.register(Post,PostAdmin)
@@ -76,6 +85,10 @@ class HometextAdmin(admin.ModelAdmin):
 	list_display = ['updated']
 
 	model = Hometext
+
+class RtiAdmin(admin.ModelAdmin):
+	list_display = ['date']
+admin.site.register(Rti,RtiAdmin)
 admin.site.register(Hometext,HometextAdmin)
 admin.site.register(Top_Slider,TopSliderAdmin)
 admin.site.register(Team_Images,TeamImagesAdmin)

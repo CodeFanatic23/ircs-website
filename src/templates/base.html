@@ -36,17 +36,17 @@
       <div class="row">
         <div class="col-lg-12 col-md-12">
           <div class="blog-breadcrumbs-area">
-          <div class="container">
+          <div class="container" style="margin-top: 70px;">
               <div class="blog-breadcrumbs-left">
-                <h2></h2>
+                <h2>Indian Red Cross Society</h2>
               </div>
               <div class="blog-breadcrumbs-right">
                 <ol class="breadcrumb">
                   <li>You are here</li>
-                  {% for x in url %}
-                  <li><a href="../{{x}}">{{x}}</a></li>
+                  {% for x,y in url %}
+                  <li><a href="{{y}}">{{x}}</a></li>
                   {% endfor %}                 
-                  <li class="active">{{category}}</li>
+                  <li class="active"><a href="/posts/{{category}}">{{category}}</a></li>
                 
                 </ol>
               </div>
@@ -82,7 +82,7 @@
     
 
     <!--=========== Start Footer SECTION ================-->
-     <footer id="footer">
+     <footer id="footer" style="margin-bottom: -150px;">
       <!-- Start Footer Top -->
       <div class="footer-top">
         <div class="container">
@@ -93,7 +93,7 @@
                 <h2>About Us</h2>
                 <div class="line"></div>
               </div>           
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+              <p>Indian Red Cross Society has been running the largest Voluntary Blood Banks in India since 1962 and at present contributing 10% of the total blood collection through its 110 blood bank centers across the country. Blood and Blood products are issued free of cost to the Thalassemic and Haemophilic patients and to Government hospitals.</p>
               </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3">
@@ -168,6 +168,8 @@
   <!--=========== End Footer SECTION ================-->
 
    {% include "menu_js.html" %}
+   {% block js %}
+   {% endblock %}
      
   </body>
 </html>

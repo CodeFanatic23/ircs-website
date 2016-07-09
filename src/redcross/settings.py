@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #thid-party
+    # 'whoosh',
+    # 'haystack',
     'registration',
     'ckeditor',
     'ckeditor_uploader',
@@ -46,7 +48,9 @@ INSTALLED_APPS = [
     'filer',
     'mptt',
     'crispy_forms',
-    'multiupload',
+    # 'multiupload',
+    'django_mobile',
+    # 'markdownx',
     #mutant
     # 'polymodels',
     # 'mutant.contrib.boolean',
@@ -71,6 +75,11 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_mobile.middleware.MobileDetectionMiddleware',
+    'django_mobile.middleware.SetFlavourMiddleware',
+]
+
+TEMPLATE_LOADERS = ['django_mobile.loader.Loader',
 ]
 
 ROOT_URLCONF = 'redcross.urls'
@@ -86,6 +95,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django_mobile.context_processors.flavour',
             ],
         },
     },
@@ -159,6 +169,8 @@ CKEDITOR_UPLOAD_PATH = "ckeditor/"
 
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
@@ -184,3 +196,37 @@ FILER_CANONICAL_URL = 'sharing/'
 FILER_DEBUG=True
 
 ACCOUNT_ACTIVATION_DAYS = '7'
+
+CKEDITOR_UPLOAD_SLUGIFY_FILENAME = True
+
+CKEDITOR_BROWSE_SHOW_DIRS = True
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': (
+            ['div', 'Source', '-', 'Save', 'NewPage', 'Preview', '-', 'Templates'],
+            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Print', 'SpellChecker', 'Scayt'],
+            ['Undo', 'Redo', '-', 'Find', 'Replace', '-', 'SelectAll', 'RemoveFormat'],
+            ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+            ['Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', 'Blockquote'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink', 'Anchor'],
+            ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak'],
+            ['Styles', 'Format', 'Font', 'FontSize'],
+            ['TextColor', 'BGColor'],
+            ['Maximize', 'ShowBlocks', '-', 'About', 'pbckcode'],
+        ),
+    }
+}
+
+WHOOSH_INDEX = os.path.join(os.path.dirname(BASE_DIR),'whoosh')
+
+HAYSTACK_CONNECTIONS = {
+'default': {
+'ENGINE':'haystack.backends.whoosh_backend.WhooshEngine',
+'PATH':WHOOSH_INDEX,
+    },
+
+}
+

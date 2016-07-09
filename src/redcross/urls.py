@@ -20,6 +20,7 @@ from redcrossmain.views import *
 from django.conf import settings
 from django.conf.urls import include
 from registration import urls
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -39,6 +40,9 @@ urlpatterns = [
     url(r'^icrc/',icrc,name='icrc'),
     url(r'^disastermanagement/',dm,name='dm'),
     url(r'^news/',news,name='news'),
+    url(r'^rti/',rti,name='rti'),
+    url(r'^tenders/',tender,name='tender'),
+    url(r'^careers/',career,name='career'),
     url(r'^newsletter/$',newsletter,name='newsletter'),
     url(r'^form/$',redcrossadmin,name='redcrossadmin'),
     # url(r'alerts/create/$',create_alert,name='create_alert'),
@@ -54,3 +58,16 @@ admin.site.site_title = 'Indian Red Cross Society'
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# if settings.DEBUG:
+#     urlpatterns += urlpatterns(
+#         '',
+#         url(
+#             r'^media/(?P<path>.*)$',
+#             'django.views.static.serve', {
+#                 'document_root': settings.MEDIA_ROOT,
+#             }
+#         ),
+#     )
+
+urlpatterns += staticfiles_urlpatterns()
