@@ -21,6 +21,7 @@ from django.conf import settings
 from django.conf.urls import include
 from registration import urls
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib.auth.views import password_reset_confirm
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -41,16 +42,19 @@ urlpatterns = [
     url(r'^disastermanagement/',dm,name='dm'),
     url(r'^news/',news,name='news'),
     url(r'^rti/',rti,name='rti'),
+    url(r'^forms',forms,name='forms'),
     url(r'^tenders/',tender,name='tender'),
     url(r'^careers/',career,name='career'),
     url(r'^newsletter/$',newsletter,name='newsletter'),
+    url(r'^users/',include('userprofile.urls')),
+    url(r'^events/',events,name='event'),
     url(r'^form/$',redcrossadmin,name='redcrossadmin'),
     # url(r'alerts/create/$',create_alert,name='create_alert'),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     # url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
 
-    url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', 'django.contrib.auth.views.password_reset_confirm', name='password_reset_confirm'),
+    url(r'^reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Za-z]{1,20})/$', password_reset_confirm, name='password_reset_confirm'),
 ]
 
 admin.site.site_header = 'Indian Red Cross WebPanel'

@@ -74,20 +74,20 @@
             
             // return all titles (except current one) to normal size
             $allTitles.animate({
-                fontSize: "14px",
-                paddingTop: 5,
-                paddingRight: 5,
-                paddingBottom: 5,
-                paddingLeft: 5
+                fontSize: "12px",
+                paddingTop: 3,
+                paddingRight: 3,
+                paddingBottom: 3,
+                paddingLeft: 3
             });
             
             // animate current title to larger size            
             $el.animate({
-                "font-size": "20px",
-                paddingTop: 10,
-                paddingRight: 5,
+                "font-size": "16px",
+                paddingTop: 3,
+                paddingRight: 3,
                 paddingBottom: 0,
-                paddingLeft: 10
+                paddingLeft: 3
             }).next().slideDown();
             
             // make the current column the large size
@@ -97,7 +97,7 @@
             
             // make other columns the small size
             $otherWraps.animate({
-                width: 230
+                width: 250
             }).removeClass("curCol");
             
             // make sure the correct column is current
@@ -115,7 +115,20 @@
         $(function(){
     $('.image').trigger('click');
 });
+
+
+       $('#search').click(function(e){
+  e.preventDefault();
+  $('#cse').toggle();
+});
+
+       $("#search").click(function() {
+    $('html,body').animate({
+        scrollTop: $("#cse").offset().top},
+        'slow');
+});
     </script>
+
 
     <!--<script>
         $(function(){

@@ -28,19 +28,24 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = '****'
+EMAIL_HOST_USER = '******'
+EMAIL_HOST_PASSWORD = '********'
+DEFAULT_FROM_EMAIL = '***********'
+SERVER_EMAIL = '*****************'
+
 # Application definition
 
 INSTALLED_APPS = [
-    # 'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     #thid-party
-    # 'whoosh',
-    # 'haystack',
     'registration',
     'ckeditor',
     'ckeditor_uploader',
@@ -48,21 +53,12 @@ INSTALLED_APPS = [
     'filer',
     'mptt',
     'crispy_forms',
-    # 'multiupload',
     'django_mobile',
-    # 'markdownx',
-    #mutant
-    # 'polymodels',
-    # 'mutant.contrib.boolean',
-    # 'mutant.contrib.temporal',
-    # 'mutant.contrib.file',
-    # 'mutant.contrib.numeric',
-    # 'mutant.contrib.text',
-    # 'mutant.contrib.web',
-    # 'mutant.contrib.related',
+    'bootstrap3',
     #local
     'redcrossmain',
     'bloodbank',
+    'userprofile',
 ]
 
 
@@ -97,10 +93,11 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django_mobile.context_processors.flavour',
             ],
+        'debug': DEBUG,
         },
     },
 ]
-
+TEMPLATE_DEBUG = DEBUG
 WSGI_APPLICATION = 'redcross.wsgi.application'
 
 
@@ -137,15 +134,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-GB'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
@@ -164,6 +162,8 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "redcross_media")
+
+LOGIN_REDIRECT_URL = '/'
 
 CKEDITOR_UPLOAD_PATH = "ckeditor/"
 
@@ -229,4 +229,4 @@ HAYSTACK_CONNECTIONS = {
     },
 
 }
-
+SITE_ID = 1

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+<h2>Profile:{{user}}</h2>
+<div class="col-md-6 col-sm-8 col-xs-10" style="float: left;">
+{% for field in form %}
+{{field.error}}
+{% endfor %}
+
+<form action="/users/profile/" method="post">{% csrf_token %}
+
+{% bootstrap_form form%}
+
+<input type="submit" value="Update" class="btn btn-primary">
+</form>
+</div>
+<div class="col-md-6 col-sm-4 col-xs-2">
+	<span><i class="fa fa-user" style="font-size: 250px;margin-left:80px;border: 1px dotted black;padding-top: 10px;"></i></span>
+</div>
+
+{% endblock %}

@@ -20,12 +20,12 @@
                             <li>
                               <div class="media">
                                 <div class="media-left">
-                                  <a href="#" class="news-img">
-                                    <img alt="img" src="images/small-blog-img1.jpg" class="media-object" height="50px" width="65px">
+                                  <a href="{{category}}/{{j}}" class="news-img">
+                                    <img alt="img" src="/media/uploads/posts/{{category}}/{{j}}/{{n}}" class="media-object" height="50px" width="65px">
                                   </a>
                                 </div>
                                 <div class="media-body">
-                                 <a href="{{category}}/{{n}}">{{i}}</a>
+                                 <a href="{{category}}/{{j}}">{{i}}</a>
                                  <span class="feed-date">{{k}}.{{l}}.{{m}}</span>
                                 </div>
                               </div>
@@ -53,7 +53,7 @@
                       <div class="blog-content">
                       <h1 style="margin-left: 170px;padding-bottom: 20px;">Featured</h1>
                         <!-- Start Featured-->
-                        {% for p,q,r,s,t,o in featured %}
+                        {% for p,q,r,s,t,o,m in featured %}
                         <div class="single-Blog">
                           <div class="single-blog-left">
                             <ul class="blog-comments-box">
@@ -64,7 +64,7 @@
                           <div class="single-blog-right">
                             <div class="blog-img">
                               <figure class="blog-figure">
-                               <a href="{{category}}/{{o}}"><img alt="img" src="/media/main/images/9.jpg" height="350px" width="550px"></a>
+                               <a href="{{category}}/{{o}}"><img alt="img" src="/media/uploads/posts/{{category}}/{{o}}/{{m}}" height="350px" width="550px"></a>
                                 <span class="image-effect"></span>
                               </figure>
                             </div>
@@ -78,7 +78,7 @@
                               <h2>{{p}}</h2>
                               <p>{{q}}</p>
                               <!-- Read more btn -->
-                              <a class="wpcf7-submit button--itzel" href="{{category}}/{{o}}">
+                              <a class="wpcf7-submit button--itzel" href="{{category}}/{{q}}">
                                 <i class="button__icon fa fa-link"></i>
                                 <span>Read More</span>
                               </a>   
@@ -87,7 +87,7 @@
                         </div>
                         {% endfor %}
                         <h1 style="margin-left: 170px;padding-bottom: 20px;">Red Cross Stories</h1>
-                        {% for a,b,c,d,e,f in data %}
+                        {% for a,b,c,d,e,f,g in data %}
                         <div class="single-Blog">
                           <div class="single-blog-left">
                             <ul class="blog-comments-box">
@@ -98,7 +98,7 @@
                           <div class="single-blog-right">
                             <div class="blog-img">
                               <figure class="blog-figure">
-                               <a href="{{category}}/{{c}}"><img alt="img" src="/media/main/images/9.jpg" height="350px" width="550px"></a>
+                               <a href="{{category}}/{{c}}"><img alt="img" src="/media/uploads/posts/{{category}}/{{c}}/{{g}}" height="350px" width="550px"></a>
                                 <span class="image-effect"></span>
                               </figure>
                             </div>

@@ -6,6 +6,7 @@
     ================================================== -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#870014" />
      <title>The Indian Red Cross Society</title>
 
     <!-- Mobile Specific Metas
@@ -37,9 +38,9 @@
           </div>
           <div class="slider-text">
             <h2>{{slider_text_1}} <strong>{{slider_text_2}}</strong> {{slider_text_3}}</h2>
-            <p><strong>IRCS</strong> {{slider_text_4}}</p>
+            <p><strong></strong> {{slider_text_4}}</p>
             {% if read_more %}
-            <div class="readmore_area">
+            <div class="readmore_area" id="slider_read">
               <a data-hover="Read More" target="_blank" href="{{slider_read_more}}"><span>Read More</span></a>                
             </div>
             {% endif %}
@@ -59,41 +60,29 @@
     </section>
     <!--=========== END Top Feature SECTION ================-->
 
-    <div class="container" style="background-color: #f7f7f7;margin-right: 9%;margin-left: 9%;">
+    <div class="container-fluid" style="background-color:#F0E1E1;max-height: 150px;">
     
-    <!-- <div class="alert" style="padding:10px;font-weight: bold;">
-    <marquee>
+  
       {% for al in alert %}
-    <p>{{al}}</p>
-    {% endfor %}</marquee>
-
-    </div> -->
-    
-    <div id="page-wrap">
-      {% for al in alert %}
-    <div class="info-col">
-
-        
-
-        <a class="image superman" href=""></a>
-
-        <dl>
-          <dt style="background-color: #BAB3B3;">Alert</dt>
-          <dd><a href="">{{al}}</a></dd>
-
-        </dl>
-
+    <div class="col-md-4 col-sm-4 col-xs-12 style_prevu_kit" align="center" >
+    <p style="padding-top:5px;"><a href="#" style="color:#870114;font-size: 15px;">{{al}}</a></p>
     </div>
+
 {% endfor %}
+
+<!-- <div align="center" class="fond">
+<div style="width:100%;">
+{% for al in alert %}
+<div class="style_prevu_kit" style="background-color:#870014;">{{al}}</div>
+{% endfor %}
+</div>
+</div> -->
         
   </div>
 
-   
-    
-    </div>
 
     <!--=========== BEGIN Service SECTION ================-->
-    <section id="service">
+    <section id="service" style="max-height:500px;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
@@ -110,7 +99,7 @@
                   <div class="col-lg-4 col-md-4">
                     <div class="single-service">
                       <div class="service-icon">
-                        <span class="fa fa-stethoscope service-icon-effect"></span>  
+                        <span class="fa fa-medkit service-icon-effect"></span>  
                       </div>                      
                       <h3><a href="{% url 'home' %}fmr">FMR</a></h3>
                       <p class="genp">{{fmr_description}}</p>
@@ -120,7 +109,7 @@
                   <div class="col-lg-4 col-md-4">
                     <div class="single-service">
                       <div class="service-icon">
-                        <span class="fa fa-heartbeat service-icon-effect"></span>  
+                        <span class="fa fa-tint service-icon-effect"></span>  
                       </div>                      
                       <h3><a href="{% url 'home' %}bloodbank">Blood Bank</a></h3>
                       <p>{{bloodbank_description}}</p>
@@ -130,7 +119,7 @@
                   <div class="col-lg-4 col-md-4">
                     <div class="single-service">
                       <div class="service-icon">
-                        <span class="fa fa-h-square service-icon-effect"></span>  
+                        <span class="fa fa-hand-o-up service-icon-effect"></span>  
                       </div>                      
                       <h3><a href="{% url 'home' %}disastermanagement">Disaster Management</a></h3>
                       <p>{{dm_description}}</p>
@@ -148,12 +137,12 @@
                       <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p> -->
                     </div>
                   </div>
-                  <div class="col-lg-4 col-md-4">
+                  <div class="col-lg-4 col-md-4" style="margin-left:34%;margin-right:34%;">
                     <div class="single-service">
                       <div class="service-icon">
-                        <span class="fa fa-ambulance service-icon-effect"></span>  
+                        <span><img class="service-icon-effect" src="/media/main/images/ST_INDIA_LOGO.png"></span>  
                       </div>                      
-                      <h3><a href="{% url 'home' %}stjohn">St Jones Ambulance</a></h3>
+                      <h3><a href="{% url 'home' %}stjohn">St. John Ambulance</a></h3>
                       <p>{{st_john_description}}</p>
                     </div>
                   </div>
@@ -177,7 +166,7 @@
     <!--=========== End Service SECTION ================-->
 
     <!--=========== BEGAIN Why Choose Us SECTION ================-->
-    <section id="whychooseSection">
+    <section id="whychooseSection" style="max-height:500px;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
@@ -216,7 +205,7 @@
                     </div>
                     <div class="media-body">
                       <h4 class="media-heading">Read the newsletter</h4>
-                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>  
+                      <p>Catch up with Indian Red Cross' activities.</p>  
                     </div>
                   </div>
                   <div class="media">
@@ -267,25 +256,25 @@
               <div class="col-lg-3 col-md-3 col-sm-6">
                  <div class="counter-box">
                   <div class="counter-no counter">
-                   {{something}}
+                   {{pmc}}
                   </div>
-                  <div class="counter-label">Clinic Rooms</div>
+                  <div class="counter-label">Primary Health Centres</div>
                 </div>
               </div>
               <div class="col-lg-3 col-md-3 col-sm-6">
                  <div class="counter-box">
                   <div class="counter-no counter">
-                    {{awards}}
+                    {{bb}}
                   </div>
-                  <div class="counter-label">Awards</div>
+                  <div class="counter-label">Blood Banks</div>
                 </div>
               </div>
               <div class="col-lg-3 col-md-3 col-sm-6">
                  <div class="counter-box">
                   <div class="counter-no counter">
-                    {{missions}}
+                    {{members}}
                   </div>
-                  <div class="counter-label">Missions</div>
+                  <div class="counter-label">Million+ Members</div>
                 </div>
               </div>
             </div>
@@ -296,7 +285,7 @@
     <!--=========== End Counter SECTION ================-->
 
     <!--=========== BEGAIN Doctors SECTION ================-->
-    <section id="meetDoctors">
+    <section id="meetDoctors" style="margin-top:-5%;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
@@ -317,7 +306,7 @@
                           <figcaption>
                             <h2>Pranab Mukherji</h2>
                             <p>President</p>
-                            <button>View</button>             
+                           <!--  <button>View</button>      -->        
                           </figcaption>
                         </figure>
                       </a>
@@ -334,7 +323,7 @@
                           <figcaption>
                             <h2>J.P Nadda</h2>
                             <p>Chairman</p>
-                            <button>View</button>             
+                            <!-- <button>View</button>       -->       
                           </figcaption>
                         </figure>
                       </a>
@@ -347,12 +336,12 @@
                       <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/secretary.jpg" height="300px" width="230px"/>
+                          <img src="/media/main/images/Vice-chairman.jpg" height="300px" width="230px"/>
                       
                           <figcaption>
-                            <h2>Some Name </h2>
+                            <h2>Avinash Rai Khanna</h2>
                             <p>Vice Chairman</p>
-                            <button>View</button>             
+                            <!-- <button>View</button>  -->            
                           </figcaption>
                         </figure>
                       </a>
@@ -365,7 +354,7 @@
                       <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/vice-chairman.jpg" height="300px" width="230px"/>
+                          <img src="/media/main/images/redcross.jpg" height="300px" width="230px"/>
                           <figcaption>
                             <h2>Dr. Veer Bhushan</h2>
                             <p>Joint Secretary</p>
@@ -376,24 +365,7 @@
                     </div>
                     </div>
                   </li>
-                   <li>
-                    <div class="single-doctor">
-                      <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
-                        <figure>
-                          <img src="/media/main/images/joint-secy.jpg" height="300px" width="230px"/>
-                          
-                          <figcaption>
-                            <h2>Secretary</h2>
-                            <p>Designation</p>
-                            <button>View</button>             
-                          </figcaption>
-                        </figure>
-                      </a>
-                   
-                    </div>
-                  </li>
-                  <li>
-                   
+                                     
     </section>
     <!--=========== End Doctors SECTION ================-->
 
@@ -401,7 +373,7 @@
     
 
     <!--=========== BEGAIN Home Blog SECTION ================-->
-    <section id="homeBLog">
+    <section id="homeBLog" style="max-height:500px;margin-top:-10%;">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
@@ -415,7 +387,7 @@
               <div class="homeBlog-content">
                 <div class="row">
                   <!-- Start Single Blog -->
-                  {% for a,b,c,d,e,f in newsdata%}
+                  {% for a,b,c,d,e,f,g in newsdata%}
                   <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="single-Blog">
                       <div class="single-blog-left">
@@ -427,7 +399,7 @@
                       <div class="single-blog-right">
                         <div class="blog-img">
                           <figure class="blog-figure">
-                           <a href="posts/news/{{c}}"><img src="/media/main/images/news1.jpg" alt="img"></a>
+                           <a href="posts/news/{{c}}"><img style="background-color:#fff;" src="/media/uploads/posts/news/{{c}}/{{g}}" alt="img"></a>
                             <span class="image-effect"></span>
                           </figure>
                         </div>
@@ -463,7 +435,7 @@
       <div class="footer-top">
         <div class="container">
           <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            <div class="col-lg-3 col-md-3 col-sm-3">
               <div class="single-footer-widget">
                 <div class="section-heading">
                 <h2>About Us</h2>
@@ -480,31 +452,32 @@
               </div>
               <ul class="footer-service">
                 <li><a href="{% url 'home' %}fmr"><span class="fa fa-check"></span>First Medical Responders(FMR)</a></li>
-                <li><a href="{% url 'home' %}stjohn"><span class="fa fa-check"></span>St. Jones Ambulance</a></li>
+                <li><a href="{% url 'home' %}stjohn"><span class="fa fa-check"></span>St. John Ambulance</a></li>
                 <li><a href="{% url 'home' %}disastermanagement"><span class="fa fa-check"></span>Disaster Management</a></li>
                 <li><a href="{% url 'home' %}bloodbank"><span class="fa fa-check"></span>Blood Bank</a></li>
                 <li><a href="{% url 'home' %}donate"><span class="fa fa-check"></span>Donate</a></li>
                 <li><a href="{% url 'home' %}volunteer"><span class="fa fa-check"></span>Volunteer</a></li>
+                <li><a href="{% url 'post' %}"><span class="fa fa-check"></span>Archive</a></li>
               </ul>
               </div>
             </div>
-            <!-- <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="col-lg-3 col-md-3 col-sm-3">
               <div class="single-footer-widget">
                 <div class="section-heading">
-                <h2>Tags</h2>
+                <h2>Map</h2>
                 <div class="line"></div>
               </div>
-                <ul class="tag-nav">
-                  <li><a href="#">Dental</a></li>
-                  <li><a href="#">Surgery</a></li>
-                  <li><a href="#">Pediatric</a></li>
-                  <li><a href="#">Cardiac</a></li>
-                  <li><a href="#">Ophthalmology</a></li>
-                  <li><a href="#">Diabetes</a></li>
-                </ul>
+                <!-- <ul class="tag-nav">
+                    <li><a href="{% url 'post' %}news">News</a></li>
+                    <li><a href="{% url 'post' %}red-cross-stories">Red Cross Stories</a></li>
+                    <li><a href="{% url 'post' %}relief">Relief</a></li>
+                    <li><a href="{% url 'post' %}community">Community</a></li>
+                    <li><a href="{% url 'post' %}others">Others</a></li>
+                </ul> -->
+               <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:440px;width:300px;'><div id='gmap_canvas' style='height:55%;width:85%;'></div><div><small><a href="http://embedgooglemaps.com">                  embed google maps             </a></small></div><div><small><a href="https://disclaimergenerator.net">disclaimer generator</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(28.6139391,77.20902120000005),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(28.6139391,77.20902120000005)});infowindow = new google.maps.InfoWindow({content:'<strong>Indian Red Cross Society,National Headquarters</strong><br>Indian Red Cross society, new delhi<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
               </div>
-            </div> -->
-            <div class="col-lg-4 col-md-4 col-sm-4">
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
               <div class="single-footer-widget">
                 <div class="section-heading">
                 <h2>Contact Info</h2>
@@ -521,26 +494,45 @@
           </div>
         </div>
       </div>
-      <!-- Start Footer Middle -->
-      <div class="footer-middle">
+            <!-- Start Footer Middle -->
+     <div class="footer-middle">
         <div class="container">
           <div class="row">
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="footer-copyright">
-              <p>&copy; Copyright 2016 <a href="index.html">Indian Red Cross Society</a></p>
-            </div>
+          <div class="col-md-2 col-sm-2 col-xs-3">
+            <a href="#">Facebook</a>
+          </div>
+          <div class="col-md-1 col-sm-1 col-xs-3">
+             <a href="{% url 'rti' %}">RTI</a>
+          </div>
+          <div class="col-md-2 col-sm-1 col-xs-3">
+             <a href="{% url 'tender' %}">Tenders</a>
+          </div>
+          <div class="col-md-1 col-sm-1 col-xs-3">
+            <a href="{% url 'career' %}">Careers</a>   
+          </div>
+
           </div>
           <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <div class="footer-social">              
-                <a href="#"><span class="fa fa-facebook"></span></a>
-                <a href="#"><span class="fa fa-twitter"></span></a>
-                <!-- <a href="#"><span class="fa fa-google-plus"></span></a>
-                <a href="#"><span class="fa fa-linkedin"></span></a>   -->   
+            <div class="footer-copyright">
+              <p>&copy; Copyright {% now "Y" %} <a href="{% url 'home' %}">Indian Red Cross Society</a></p>
             </div>
           </div>
+          
         </div>
         </div>
       </div>
+      <!-- Start Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <p>Developer Profile <a rel="nofollow" href="#"></a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
     
     <!--=========== End Footer SECTION ================-->
 

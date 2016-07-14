@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 style="margin-left: 40%;margin-right: 40%;padding-top: 50px;">Important dates</h1>
+<div class="table-responsive">
+                  <table class="table table-hover table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Description</th>                      
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for x,y,z in data %}
+                      <tr>
+                        <td>{{x}}</td>
+                        <td>{{y}}</td>
+                        <td><a href="#" target="_blank">{{z}}</td>
+                      </tr>
+                      {% endfor %}
+                      
+                    </tbody>
+                  </table>
+                  </div>
+
+{% endblock %}
