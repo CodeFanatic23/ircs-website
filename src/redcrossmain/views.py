@@ -17,12 +17,11 @@ def home(request):
 		for a in sliderobj:
 			slimg.append(a)
 		alert = []
-		image = []
+		linka = []
 		for i in alertobj:
 			alert.append(i.title)
-			image.append(i.image)
+			linka.append(i.url)
 
-		nosobj = Branch_Number.objects.all()
 
 		hometxtobj = Hometext.objects.all()
 		read_more = ''
@@ -49,11 +48,12 @@ def home(request):
 			dm_description = d.dm_description
 			st_john_description = d.st_john_ambulance_description
 			bloodbank_description = d.bloodbank_description
-		if slider_read_more != None:
-			read_more = True
-		else:
+
+		if slider_read_more == '':
 			read_more = False
-		print(read_more)
+		else:
+			read_more = True
+
 		#news
 		k = 0
 		title = []
@@ -78,18 +78,33 @@ def home(request):
 
 
 		#newsletter
-		newsletter = Newsletter.objects.all().order_by('date')[0]
+		newsletter = Newsletter.objects.all().order_by('-date')
+
+		if newsletter.count() > 0:
+			newsletter = str(newsletter[0].file)
+		else:
+			newsletter = ""
+
+		nosobj = Branch_Number.objects.all()
+		if nosobj.count() > 0:
+			branches = nosobj[0].branches
+			pmc = nosobj[0].pmc
+			bb = nosobj[0].bb
+			members = nosobj[0].members
+		else:
+			branches = 700
+			pmc = 600
+			bb = 170
+			members = 12
 
 
-		print(alert)
-		print(img)
 		context = {
-		'alert':alert,
+		'alert':zip(alert,linka),
 		'slider_data':slimg,
-		'branches':nosobj[0].branches,
-		'pmc':nosobj[0].pmc,
-		'bb':nosobj[0].bb,
-		'members':nosobj[0].members,
+		'branches':branches,
+		'pmc':pmc,
+		'bb':bb,
+		'members':members,
 		'slider_text_1':slider_text_1,
 		'slider_text_2':slider_text_2,
 		'slider_text_3':slider_text_3,
@@ -97,12 +112,12 @@ def home(request):
 		'slider_text_5':slider_text_5,
 		'slider_read_more':slider_read_more,
 		'read_more':read_more,
-		'fmr_description':fmr_description,
-		'dm_description':dm_description,
-		'bloodbank_description':bloodbank_description,
-		'st_john_description':st_john_description,
+		'fmr':fmr_description,
+		'dm':dm_description,
+		'bloodbank':bloodbank_description,
+		'st_john':st_john_description,
 		'newsdata':zip(title,caption,link,date,month,year,img),
-		'newsletter':str(newsletter.file),
+		'newsletter':newsletter,
 		}
 		return render(request,"index.html",context)
 	except Exception as e:
@@ -118,7 +133,7 @@ def post(request):
 	post_name = url[-1]
 	url = url[1:-1]
 	print(post_name)
-	cat = ['news','red-cross-stories','relief','community','alerts','other','disaster']
+	cat = ['news','red-cross-stories','courses','community','alerts','other','disaster']
 	print(url)
 	if post_name != '' and post_name.lower() not in cat:
 		try:		
@@ -200,6 +215,7 @@ def post(request):
 				m.append(q1.date.strftime('%B'))
 				y.append(q1.date.strftime('%Y'))
 				lin.append(q1.title_slug)
+				print(q1.preview_image_name)
 				imgf.append(q1.preview_image_name)
 		#featured post
 		print(img)
@@ -295,11 +311,9 @@ def bloodbank(request):
 def volunteer(request):
 	return render(request,"volunteer.html")
 
-def archive(request):
-	return render(request,"archive.html")
 
 def learn(request):
-	# return render(request,"archive.html")
+	return render(request,"learn.html")
 	pass
 def news(request):
 	return render(request,"news.html")
@@ -310,10 +324,14 @@ def gallery(request):
 def dm(request):
 	return render(request,"assoc1.html")
 
-def icrc(request):
-	return render(request,"assoc3_stjohn.html")
+def services(request):
+	return render(request,"healthservices.html")
+
 
 def stjohn(request):
+	return render(request,"assoc3_stjohn.html")
+
+def icrc(request):
 	return render(request,"assoc4_icrc.html")
 def rti(request):
 	a = Rti.objects.all().order_by('-date')[0]
@@ -394,3 +412,11 @@ def events(request):
 	'data':zip(calender,date,desc),
 	}
 	return render(request,"calendar.html",context)
+
+def downloads(request):
+	obj = Download.objects.all().order_by('name')
+	context = {
+	'data':obj,
+	}
+
+	return render(request,"downloads.html",context)

@@ -8,7 +8,7 @@ class PostForm(forms.ModelForm):
         ('news', 'News'),
         ('red-cross-stories', 'Red Cross Stories'),
         ('disaster', 'Disaster'),
-        ('relief', 'Relief'),
+        ('courses', 'Academic Courses'),
         ('community', 'Community'),
         ('alerts', 'Alerts'),
         ('other','Other'),

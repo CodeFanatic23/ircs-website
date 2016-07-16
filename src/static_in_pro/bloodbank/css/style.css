@@ -14,6 +14,7 @@ body {
   color: #000000;
 }
 
+
 h1,
 h2,
 h3,
@@ -46,7 +47,7 @@ table {
 
 .navbar-top {
   background: #000000;
-  font-size: 12px;
+  font-size: 25px;
   padding: 3px 0;
 }
 .navbar-top .list-inline {
@@ -62,7 +63,7 @@ table {
 .navbar-main {
   margin-bottom: 0;
   color: #fff;
-  background: #CC0001;
+  background: #870014;
 }
 .navbar-main .navbar-brand {
   border-bottom: none !important;
@@ -78,10 +79,11 @@ table {
 .navbar-main .submenu {
   position: absolute;
   list-style: none;
-  background: #CC0001;
+  background: #870014;
   padding: 0;
   width: 150px;
   left: -35px;
+
   visibility: hidden;
   top: 85px;
   -moz-transition: all, 0.05s;
@@ -131,7 +133,7 @@ table {
   width: 100%;
 }
 .carousel-home .carousel-control {
-  background: #CC0001;
+  background: #870014;
   height: 80px;
   width: 40px;
   top: 50%;
@@ -272,7 +274,7 @@ table {
 .cause {
   padding-bottom: 15px;
   margin-bottom: 30px;
-  border: 1px solid #CC0001;
+  border: 1px solid #870014;
   -moz-transition: all, 0.3s;
   -o-transition: all, 0.3s;
   -webkit-transition: all, 0.3s;
@@ -280,11 +282,11 @@ table {
 }
 .cause .cause-progress {
   margin: 0 10px 15px;
-  border: 1px solid #CC0001;
+  border: 1px solid #870014;
   border-radius: 3px;
 }
 .cause .cause-progress .progress-bar {
-  background: #CC0001;
+  background: #870014;
   box-shadow: none;
 }
 .cause .cause-img {
@@ -312,11 +314,11 @@ table {
 /* Team 
 ================================= */
 .team-member {
-  background: #CC0001;
+  background: #870014;
   color: #fff;
   text-align: center;
   padding-bottom: 15px;
-  border: 1px solid #CC0001;
+  border: 1px solid #870014;
 }
 .team-member .thumnail img {
   width: 100%;
@@ -336,7 +338,7 @@ table {
 }
 
 .main-footer {
-  background: #CC0001;
+  background: #870014;
   color: #fff;
 }
 .main-footer .footer-main {
@@ -466,7 +468,7 @@ table {
   display: inline-block;
   width: 35px;
   height: 35px;
-  background: #CC0001;
+  background: #870014;
   vertical-align: middle;
   margin-right: 5px;
   color: #fff;
@@ -513,17 +515,17 @@ form .alert {
 }
 .btn-primary:hover {
   background: #fff;
-  color: #CC0001;
-  border: 1px solid #CC0001;
+  color: #870014;
+  border: 1px solid #870014;
 }
 
 .btn-secondary {
   background: #fff;
-  color: #CC0001;
+  color: #870014;
   border-radius: 0;
 }
 .btn-secondary:hover {
-  background: #CC0001;
+  background: #870014;
   color: #fff;
 }
 
@@ -552,7 +554,7 @@ form .alert {
 .title-under {
   display: block;
   margin: 5px auto;
-  background: #CC0001;
+  background: #870014;
   height: 1px;
   width: 280px;
 }
@@ -576,13 +578,13 @@ form .alert {
 /* Tabeles
 ================================= */
 .table-style-1 thead {
-  background: #CC0001;
+  background: #870014;
   border-bottom: 1px solid #144d7b;
   color: #fff;
 }
 .table-style-1 td,
 .table-style-1 th {
-  border-bottom: 1px solid #CC0001;
+  border-bottom: 1px solid #870014;
 }
 
 .table-style-2 thead {
@@ -591,25 +593,25 @@ form .alert {
   color: #fff;
 }
 .table-style-2 tbody tr:nth-child(even) {
-  background: #CC0001;
+  background: #870014;
   color: #fff;
 }
 .table-style-2 td,
 .table-style-2 th {
-  border-bottom: 1px solid #CC0001;
+  border-bottom: 1px solid #870014;
 }
 
 /* Tabs
 ================================= */
 .nav-tabs {
-  border-bottom-color: #CC0001;
+  border-bottom-color: #870014;
   margin-bottom: 15px;
 }
 
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-  background: #CC0001;
+  background: #870014;
   color: #fff;
 }
 
@@ -618,7 +620,7 @@ form .alert {
 }
 
 .nav-tabs > li > a:hover {
-  border-color: #CC0001 #CC0001 #CC0001 #000000;
+  border-color: #870014 #870014 #870014 #000000;
 }
 
 .nav > li > a:hover, .nav > li > a:focus {
@@ -629,11 +631,11 @@ form .alert {
 /* Accordion
 ================================= */
 .panel-default {
-  border-color: #CC0001;
+  border-color: #870014;
   border-radius: 0;
 }
 .panel-default > .panel-heading {
-  background: #CC0001;
+  background: #870014;
   color: #fff;
 }
 .panel-default > .panel-heading:hover {
@@ -646,7 +648,7 @@ form .alert {
   border-radius: 0;
 }
 .modal .modal-header {
-  background: #CC0001;
+  background: #870014;
   color: #fff;
 }
 .modal .modal-header .close {
@@ -836,7 +838,7 @@ form .alert {
   .navbar-main li:active .submenu li,
   .navbar-main li:focus .submenu li {
     background: #000000;
-    border-top-color: #CC0001;
+    border-top-color: #870014;
   }
 
   .carousel-home .carousel-title {
@@ -846,7 +848,7 @@ form .alert {
     font-size: 16px;
   }
   .carousel-home .carousel-control {
-    background: #CC0001;
+    background: #870014;
     height: 40px;
     width: 20px;
     top: 50%;

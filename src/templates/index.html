@@ -62,27 +62,27 @@
 
     <div class="container-fluid" style="background-color:#F0E1E1;max-height: 150px;">
     
-  
-      {% for al in alert %}
+  {% if flavour == "full" %}
+      {% for al,l in alert %}
     <div class="col-md-4 col-sm-4 col-xs-12 style_prevu_kit" align="center" >
-    <p style="padding-top:5px;"><a href="#" style="color:#870114;font-size: 15px;">{{al}}</a></p>
+    <p style="padding-top:5px;"><a href="{{l}}" style="color:#870114;font-size: 15px;">{{al}}</a></p>
     </div>
 
 {% endfor %}
+{% else %}
+{% for al,l in alert %}
+<div class="col-md-4 col-sm-4 col-xs-12" style="background-color:#F0E1E1;border: 1px dotted #870114">
+    <a href="{{l}}" style="color:#870114;font-size: 20px;text-decoration: bolds;"><p style="padding-top:5px;">{{al}}</p></a>
+    </div>
+    {% endfor %}
 
-<!-- <div align="center" class="fond">
-<div style="width:100%;">
-{% for al in alert %}
-<div class="style_prevu_kit" style="background-color:#870014;">{{al}}</div>
-{% endfor %}
-</div>
-</div> -->
+{% endif %}
         
   </div>
 
 
     <!--=========== BEGIN Service SECTION ================-->
-    <section id="service" style="max-height:500px;">
+    <section id="service">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
@@ -93,7 +93,7 @@
                 <div class="line"></div>
               </div>
               <!-- Start Service Content -->
-              <div class="service-content" style="width: 100%;">
+              <div class="service-content">
                 <div class="row">
                   <!-- Start Single Service -->
                   <div class="col-lg-4 col-md-4">
@@ -119,41 +119,41 @@
                   <div class="col-lg-4 col-md-4">
                     <div class="single-service">
                       <div class="service-icon">
-                        <span class="fa fa-hand-o-up service-icon-effect"></span>  
+                        <span class="fa fa-user-plus service-icon-effect"></span>  
                       </div>                      
                       <h3><a href="{% url 'home' %}disastermanagement">Disaster Management</a></h3>
                       <p>{{dm_description}}</p>
                     </div>
                   </div>
                   <!-- Start Single Service -->
-                  
+                  <div class="col-lg-4 col-md-4">
+                    <div class="single-service">
+                      <div class="service-icon">
+                        <span class="fa fa-stethoscope service-icon-effect"></span>  
+                      </div>                      
+                      <h3><a href="{% url 'home' %}medical-health-services">Medical Health Services</a></h3>
+                      <p>{{mhc}}</p>
+                    </div>
+                  </div>                  
                   <!-- Start Single Service -->
                   <div class="col-lg-4 col-md-4" >
                     <div class="single-service">
-                      <!-- <div class="service-icon">
-                        <span class="fa fa-user-md service-icon-effect"></span>  
-                      </div> -->                      
-                      <!-- <h3><a href="#">Doctors</a></h3>
-                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p> -->
-                    </div>
-                  </div>
-                  <div class="col-lg-4 col-md-4" style="margin-left:34%;margin-right:34%;">
-                    <div class="single-service">
-                      <div class="service-icon">
-                        <span><img class="service-icon-effect" src="/media/main/images/ST_INDIA_LOGO.png"></span>  
+                      <div class="service-icon" >
+                        <span id="gg"><img class="service-icon-effect" src="/media/main/images/ST_INDIA_LOGO.png"></span>  
                       </div>                      
-                      <h3><a href="{% url 'home' %}stjohn">St. John Ambulance</a></h3>
+                      <h3><a href="{% url 'home' %}stjohn">St. John Ambulance(INDIA)</a></h3>
                       <p>{{st_john_description}}</p>
                     </div>
                   </div>
                   <!-- Start Single Service -->
                   <div class="col-lg-4 col-md-4">
                     <div class="single-service">
-                      <!-- <div class="service-icon">
-                        <span class="fa fa-ambulance service-icon-effect"></span>  
+                      <div class="service-icon">
+                        <span class="fa fa-pencil-square-o service-icon-effect"></span>  
                       </div>                      
-                      <h3><a href="#">St Jones Ambulance</a></h3>
-                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour</p> -->
+                      <h3><a href="{% url 'post' %}courses">Academic Courses</a></h3>
+                      <p>{{courses}}</p>                     
+                     
                     </div>
                   </div>
                 </div>
@@ -166,7 +166,7 @@
     <!--=========== End Service SECTION ================-->
 
     <!--=========== BEGAIN Why Choose Us SECTION ================-->
-    <section id="whychooseSection" style="max-height:500px;">
+    <section id="whychooseSection">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
@@ -216,7 +216,7 @@
                     </div>
                     <div class="media-body">
                       <h4 class="media-heading">Volunteer</h4>
-                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>  
+                      <p>Join hands with us helping millions who need support</p>  
                     </div>
                   </div>
                   <div class="media">
@@ -227,7 +227,7 @@
                     </div>
                     <div class="media-body">
                       <h4 class="media-heading">Donate</h4>
-                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>  
+                      <p>Donate blood and save a life</p>  
                     </div>
                   </div>
                 </div>
@@ -285,7 +285,7 @@
     <!--=========== End Counter SECTION ================-->
 
     <!--=========== BEGAIN Doctors SECTION ================-->
-    <section id="meetDoctors" style="margin-top:-5%;">
+    <section id="meetDoctors">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
@@ -301,7 +301,7 @@
                     <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/president.jpg" height="300px" width="230px" />
+                          <img src="/media/main/images/president.jpg" height="290px" width="205px" />
                           
                           <figcaption>
                             <h2>Pranab Mukherji</h2>
@@ -318,7 +318,7 @@
                       <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/chairman.jpg" height="300px" width="230px" />
+                          <img src="/media/main/images/chairman.jpg" height="290px" width="205px" />
                           
                           <figcaption>
                             <h2>J.P Nadda</h2>
@@ -336,7 +336,7 @@
                       <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/Vice-chairman.jpg" height="300px" width="230px"/>
+                          <img src="/media/main/images/Vice-chairman.jpg" height="290px" width="205px"/>
                       
                           <figcaption>
                             <h2>Avinash Rai Khanna</h2>
@@ -354,11 +354,11 @@
                       <div class="single-doctor">
                       <a class="tdoctor" href="#" data-path-hover="m 180,34.57627 -180,0 L 0,0 180,0 z">
                         <figure>
-                          <img src="/media/main/images/redcross.jpg" height="300px" width="230px"/>
+                          <img src="/media/main/images/joint.jpg" height="290px" width="205px"/>
                           <figcaption>
                             <h2>Dr. Veer Bhushan</h2>
                             <p>Joint Secretary</p>
-                            <button>View</button>             
+                                    
                           </figcaption>
                         </figure>
                       </a>
@@ -373,7 +373,7 @@
     
 
     <!--=========== BEGAIN Home Blog SECTION ================-->
-    <section id="homeBLog" style="max-height:500px;margin-top:-10%;">
+    <section id="homeBLog">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
@@ -387,28 +387,23 @@
               <div class="homeBlog-content">
                 <div class="row">
                   <!-- Start Single Blog -->
-                  {% for a,b,c,d,e,f,g in newsdata%}
+                  {% for a,b,c,d,e,f,g in newsdata %}
                   <div class="col-lg-4 col-md-4 col-sm-4">
                     <div class="single-Blog">
                       <div class="single-blog-left">
                         <ul class="blog-comments-box">
                           <li>{{d}}<h2>{{e}}</h2>{{f}}</li>
-                          <li><span class="fa fa-eye"></span>1523</li>
+                      
                         </ul>
                       </div>
                       <div class="single-blog-right">
                         <div class="blog-img">
                           <figure class="blog-figure">
-                           <a href="posts/news/{{c}}"><img style="background-color:#fff;" src="/media/uploads/posts/news/{{c}}/{{g}}" alt="img"></a>
+                           <a href="posts/news/{{c}}"><img style="background-color:#fff;" src="/media/uploads/posts/news/{{c}}/{{g}}" alt="img" class="img-responsive"></a>
                             <span class="image-effect"></span>
                           </figure>
                         </div>
-                       <!--  <div class="blog-author">
-                          <ul>
-                            <li>By <a href="#">Dr. Smith</a></li>
-                            <li>In <a href="#">Dental</a></li>
-                          </ul>
-                        </div> -->
+                       
                         <div class="blog-content">
                           <h2>{{a}}</h2>
                           <p>{{b}}</p>
@@ -430,7 +425,7 @@
     <!--=========== End Home Blog SECTION ================-->
 
     <!--=========== Start Footer SECTION ================-->
-    <footer id="footer" style="margin-bottom: -150px;">
+    <footer id="footer">
       <!-- Start Footer Top -->
       <div class="footer-top">
         <div class="container">
@@ -474,7 +469,7 @@
                     <li><a href="{% url 'post' %}community">Community</a></li>
                     <li><a href="{% url 'post' %}others">Others</a></li>
                 </ul> -->
-               <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:440px;width:300px;'><div id='gmap_canvas' style='height:55%;width:85%;'></div><div><small><a href="http://embedgooglemaps.com">                  embed google maps             </a></small></div><div><small><a href="https://disclaimergenerator.net">disclaimer generator</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(28.6139391,77.20902120000005),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(28.6139391,77.20902120000005)});infowindow = new google.maps.InfoWindow({content:'<strong>Indian Red Cross Society,National Headquarters</strong><br>Indian Red Cross society, new delhi<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+               <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:440px;width:300px;'><div id='gmap_canvas' style='height:55%;width:85%;'></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:15,center:new google.maps.LatLng(28.6139391,77.20902120000005),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(28.6139391,77.20902120000005)});infowindow = new google.maps.InfoWindow({content:'<strong>Indian Red Cross Society,National Headquarters</strong><br>Indian Red Cross society, new delhi<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
               </div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3">
@@ -486,8 +481,8 @@
               <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
               <address class="contact-info">
                 <p><span class="fa fa-home"></span>Indian Red Cross National HQ,Central Secretariat,New Delhi</p>
-                <p><span class="fa fa-phone"></span>phone no.</p>
-                <p><span class="fa fa-envelope"></span>info@indianredcross.org</p>
+                <p><span class="fa fa-phone"></span>Phone no.  (+91-11) 23716441/2/3</p>
+                <p><span class="fa fa-envelope"></span>icrc@indianredcross.org</p>
               </address>
               </div>
             </div>

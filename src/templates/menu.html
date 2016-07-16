@@ -30,34 +30,20 @@
               </button>
                             
               <!-- IMG BASED LOGO  -->
-               <a class="navbar-brand" href="{% url 'home' %}"><img src="/media/main/images/logo_white_.png" alt="logo" height="77px" width="370px" style="margin-top: -20px;"></a>
+               <a class="navbar-brand" href="{% url 'home' %}"><img src="/static/main/images/logo_white_.png" alt="logo" height="77px" width="370px" style="margin-top: -20px;"></a>
                </div>
             <div id="navbar" class="navbar-collapse collapse">
 
               <ul id="top-menu" class="nav navbar-nav navbar-right main-nav">
                 
                 
-                <!-- {% if user.is_authenticated %}<li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="margin-top: -29px;">
-          <span><p><a href="{% url 'home' %}users/profile"><i class="fa fa-user" style="font-size: 22px;color:#fff;"></i></a></p></span></a>
-          <ul class="dropdown-menu" role="menu">
-                    <li><a href="{% url 'auth_logout' %}">Logout</a></li></ul>
-          </li>
-          {% else %}
-          <li>
-
-                <span><p style="margin-top: 15px;"><a href="{% url 'auth_login' %}"><i class="fa fa-user" style="font-size: 22px;color:#fff;"></i></a></p></span></a></li>
-
-  {% endif %} -->
-
-                <!-- <li id="menuhome"><a href="{% url 'home' %}">Home</a> -->
                 {% if flavour != "full" %}
                 <li><div id='cse' style="width:90%;margin-left:-5%;">Loading</div></li>
                 {% else %}
                  <li><div id='cse' style="width:250px;display:none;margin-top:-10px;">Loading</div></li>
                 {% endif %}
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About Us<span class="fa fa-angle-down"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About Us<span class="fa fa-angle-down" style="opacity:0.3;"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="404.html"></a></li>
                     <li><a href="about">About Society</a></li>   
@@ -68,7 +54,7 @@
                 </li>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">What We Do<span class=""></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">What We Do<span class="fa fa-angle-down" style="opacity:0.3;"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="medical-counseling.html">Programs and Activities</a></li>
                     <li><a href="medical-research.html">Tracing Activities</a></li>
@@ -76,14 +62,14 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Get Involved<span class="fa fa-angle-down"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Get Involved<span class="fa fa-angle-down" style="opacity:0.3;"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="{% url 'membership' %}">Membership</a></li>
                     <li><a href="{% url 'donate' %}">Donate</a></li>
-                    <li><a href="http://www.ifrc.org/learning-platform/" target="_blank">Learn</a></li>
-                    <!-- <li><a href="blood-bank.html">Volunteer</a></li> -->
+                    <li><a href="{% url 'learn' %}" target="_blank">Learn</a></li>
+               
                     <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Volunteer <span class="fa fa-angle-down"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Volunteer <span class="fa fa-angle-down" style="opacity:0.3;"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="{% url 'volunteer' %}">Youth/Junior Red Cross</a></li>
                     <li><a href="{% url 'volunteer' %}">Community Volunteer</a></li>
@@ -92,17 +78,18 @@
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Media<span class="fa fa-angle-down"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Media<span class="fa fa-angle-down" style="opacity:0.3;"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="{% url 'gallery' %}">PhotoGallery</a></li>
                     <li><a href="{% url 'home' %}newsletter">Newsletter</a></li>
+                    <li><a href="{% url 'downloads' %}">Downloads</a></li>
                     <li><a href="publications">Publications</a></li>
                     <li class="dropdown">
-                  <a href="{% url 'post' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Articles <span class="fa fa-angle-down"></span></a>
+                  <a href="{% url 'post' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Articles <span class="fa fa-angle-down" style="opacity:0.3;"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="{% url 'post' %}news">News</a></li>
                     <li><a href="{% url 'post' %}red-cross-stories">Red Cross Stories</a></li>
-                    <li><a href="{% url 'post' %}relief">Relief</a></li>
+                    <li><a href="{% url 'post' %}disaster">Disasters</a></li>
                     <li><a href="{% url 'post' %}community">Community</a></li>
                     <li><a href="{% url 'post' %}others">Others</a></li>
                   </ul>

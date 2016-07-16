@@ -27,3 +27,6 @@ def three(request):
 
 def four(request):
 	return render(request,"bloodbank/the_four4.html")
+
+def faq(request):
+	return render(request,"bloodbank/faq.html")

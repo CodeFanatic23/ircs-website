@@ -34,12 +34,13 @@ urlpatterns = [
     url(r'^volunteer/$', volunteer,name='volunteer'),
     url(r'^donate/$', donate,name='donate'),
     url(r'^upload/$',upload,name='upload'),
-    url(r'^archive/$',archive,name='archive'),
     url(r'^gallery/$',gallery,name='gallery'),
     url(r'^learn/',learn,name='learn'),
     url(r'^stjohn/',stjohn,name='stjohn'),
+    url(r'^medical-health-services/',services,name='mhc'),
     url(r'^icrc/',icrc,name='icrc'),
     url(r'^disastermanagement/',dm,name='dm'),
+    url(r'^downloads/',downloads,name='downloads'),
     url(r'^news/',news,name='news'),
     url(r'^rti/',rti,name='rti'),
     url(r'^forms',forms,name='forms'),
@@ -48,8 +49,6 @@ urlpatterns = [
     url(r'^newsletter/$',newsletter,name='newsletter'),
     url(r'^users/',include('userprofile.urls')),
     url(r'^events/',events,name='event'),
-    url(r'^form/$',redcrossadmin,name='redcrossadmin'),
-    # url(r'alerts/create/$',create_alert,name='create_alert'),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     # url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
@@ -62,16 +61,3 @@ admin.site.site_title = 'Indian Red Cross Society'
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# if settings.DEBUG:
-#     urlpatterns += urlpatterns(
-#         '',
-#         url(
-#             r'^media/(?P<path>.*)$',
-#             'django.views.static.serve', {
-#                 'document_root': settings.MEDIA_ROOT,
-#             }
-#         ),
-#     )
-
-urlpatterns += staticfiles_urlpatterns()

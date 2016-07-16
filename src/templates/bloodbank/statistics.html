@@ -5,205 +5,105 @@
         <title>BLOOD BANK | Indian Red Cross Society</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
-
-        <!-- Bootsrap -->
-        <link rel="stylesheet" href="/static/bloodbank/css/bootstrap.min.css">
-
-        <!-- Font awesome -->
-        <link rel="stylesheet" href="/static/bloodbank/css/font-awesome.min.css">
-
-        <!-- Owl carousel -->
-        <link rel="stylesheet" href="/static/bloodbank/css/owl.carousel.css">
-
-        <!-- Template main Css -->
-        <link rel="stylesheet" href="/static/bloodbank/css/style.css">
-        
-        <!-- Modernizr -->
-        <script src="/static/bloodbank/js/modernizr-2.6.2.min.js"></script>
-
+        {% include "bloodbank/menu_css.html" %}
 
     </head>
 
     <body>
 
 
-    <header class="main-header">
-        
-    
-        <nav class="navbar navbar-static-top">
-
-            <div class="navbar-top">
-
-              <div class="container">
-                  <div class="row">
-
-                    <div class="col-sm-6 col-xs-12">
-
-                        <ul class="list-unstyled list-inline header-contact">
-                            <li> <i class="fa fa-phone"></i> <a href="tel:">+91 11 23711551 </a> </li>
-                             <li> <i class="fa fa-envelope"></i> <a href="mailto:info@indianredcross.org">info@indianredcross.org</a> </li>
-                       </ul> <!-- /.header-contact  -->
-                      
-                    </div>
-
-                    <div class="col-sm-6 col-xs-12 text-right">
-
-                        <ul class="list-unstyled list-inline header-social">
-
-                            <li> <a href="#"> <i class="fa fa-facebook"></i> </a> </li>
-                            <li> <a href="#"> <i class="fa fa-twitter"></i>  </a> </li>
-                            <li> <a href="#"> <i class="fa fa-google"></i>  </a> </li>
-                            <li> <a href="#"> <i class="fa fa-youtube"></i>  </a> </li>
-                            <li> <a href="#"> <i class="fa fa fa-pinterest-p"></i>  </a> </li>
-                       </ul> <!-- /.header-social  -->
-                      
-                    </div>
+    {% include "bloodbank/menu.html" %}
 
 
-                  </div>
-              </div>
-
-            </div>
-
-            <div class="navbar-main">
-              
-              <div class="container">
-
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-
-                  </button>
-                  
-                  <a class="navbar-brand" href="index.html"><img src="/static/bloodbank/images/ircs_logo.png" alt="" style= "margin-top: -10px;"></a>
-                  
-                </div>
-
-                <div id="navbar" class="navbar-collapse collapse pull-right">
-
-                  <ul class="nav navbar-nav">
-
-                    <li><a class="is-active" href="index.html">HOME</a></li>
-                    <li><a href="about.html">ROLE of IRCS</a></li>
-                    <li class="has-child"><a href="statistics.html">STATISTICS</a>
-
-                      <!-- <ul class="submenu">
-                         <li class="submenu-item"><a href="causes.html">Causes list </a></li>
-                         <li class="submenu-item"><a href="causes-single.html">Single cause </a></li>
-                         <li class="submenu-item"><a href="causes-single.html">Single cause </a></li>
-                         <li class="submenu-item"><a href="causes-single.html">Single cause </a></li>
-                      </ul> -->
-
-                    </li>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="downloads.html">DOWNLOADS</a></li>
-
-                  </ul>
-
-                </div> <!-- /#navbar -->
-
-              </div> <!-- /.container -->
-              
-            </div> <!-- /.navbar-main -->
-
-
-        </nav> 
-
-    </header> <!-- /. main-header -->
 <br>
 <br>
 
 
 
-<!-- 
-	<div class="page-heading text-center">
-
-		<div class="container zoomIn animated">
-			
-			<h1 class="page-title">CAUSE TITLE <span class="title-under"></span></h1>
-			<p class="page-description">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit Necessitatibus.
-			</p>
-			
-		</div>
-
-	</div> -->
+<div class="container" style="font-size:25px">
  <h2 class="title-style-1">STATISTICS<span class="title-under"></span></h2>
  <br>
-	<div class="main-container">
+    <div class="main-container">
 
-		<div class="container">
+        <div class="container">
 
-			<div class="row">
+            <div class="row">
 
-				<div class="col-md-12 fadeIn animated">
+                <div class="col-md-12 fadeIn animated">
 
-					<p><strong>
-						Blood donations in different countries per 1000 population:
-					</strong></p>
+                    <p><center><strong>
+                        Blood donations in different countries per 1000 population:
+                    </strong><center></p>
 
-					<img class="table" src="/static/bloodbank/images/statistics/table.png" height = "400px" width="150px "alt="" >
-					<br>
+                    <img class="table" src="/static/bloodbank/images/statistics/table.png" style="height:80% ; width:80%; margin-left:10%; margin-right:10%; margin-bottom:5%; margin-top:5%;" >
+                    <br>
 
-				</div>
+                </div>
 <div class="clearfix"></div>
-				<p><strong> Figures about blood transfusion, voluntary blood donation: </strong> </p>
+                <p><strong><center> Figures about blood transfusion, voluntary blood donation: </strong></center> </p>
 <div>
 </div>
-			<ol style ="list-style-type:circle">
-				<li>Transmission of HIV through Blood Transfusion: </li>
-						<ol style ="list-style-type:square">
-							<li>Reduced from 6.07% (1999), 4.61% (2003), 2.07% (2006) to   1.87% (2007)</li>
-						</ol><br>
-				<li>Proportion of Voluntary blood donation collected in Government & Voluntary Blood Banks gradually on the rise </li>
-						<ol style ="list-style-type:square">
-							<li> 20% (1999), 49.1% (2003), 51.4% (2004), 52.5% (2005) to 54.2% (2006), 55.5%(2007)</li>
-						</ol><br>
-				<li>HIV Sero-reactivity reduced among blood donors: </li>
-						<ol style ="list-style-type:square">
-							<li> 1.44% (1999),  0.41% (2003), 0.36% (2005) to 0.34% (2006), 0.23%(2007)</li>
-						</ol><br>
-				<li>1230 Blood Banks modernized by NACO including 82 blood component separation units and 10 Model Blood Banks.</li>
-						
-			</ol><br>
+            <ol style ="list-style-type:circle">
+                <li>Transmission of HIV through Blood Transfusion: </li>
+                        <ol style ="list-style-type:square">
+                            <li>Reduced from 6.07% (1999), 4.61% (2003), 2.07% (2006) to   1.87% (2007)</li>
+                        </ol><br>
+                <li>Proportion of Voluntary blood donation collected in Government & Voluntary Blood Banks gradually on the rise </li>
+                        <ol style ="list-style-type:square">
+                            <li> 20% (1999), 49.1% (2003), 51.4% (2004), 52.5% (2005) to 54.2% (2006), 55.5%(2007)</li>
+                        </ol><br>
+                <li>HIV Sero-reactivity reduced among blood donors: </li>
+                        <ol style ="list-style-type:square">
+                            <li> 1.44% (1999),  0.41% (2003), 0.36% (2005) to 0.34% (2006), 0.23%(2007)</li>
+                        </ol><br>
+                <li>1230 Blood Banks modernized by NACO including 82 blood component separation units and 10 Model Blood Banks.</li>
+                        
+            </ol><br>
 
 
-	<h2 class="title-style-1">STATE WISE DATA<span class="title-under"></span></h2>
-<p><strong><center>(As per National AIDS Control Organisation Dec'07)</center></strong></p>
+    <h2 class="title-style-1">STATE WISE DATA<span class="title-under"></span></h2>
+<p><strong><center>(As per National AIDS Control Organisation Dec'07)</center></strong></p><br>
 
-<img src="/static/bloodbank/images/statistics/stat60.gif"  alt="" ><br>
-<img src="/static/bloodbank/images/statistics/stat40-60.png"  alt="" ><br>
-<img src="/static/bloodbank/images/statistics/stat20-40.png"  alt="" ><br>
-<img src="/static/bloodbank/images/statistics/stat20.gif"  alt="" ><br>
+<img src="/static/bloodbank/images/statistics/stat60.gif" class="img-responsive" alt="" ><br>
+<p>        </p>
+<img src="/static/bloodbank/images/statistics/stat40-60.png" height="60%" width="70%" class="img-responsive"  alt="" ><br>
+<p>        </p>
+<img src="/static/bloodbank/images/statistics/stat20-40.png" height="60%" width="70%"  class="img-responsive" alt="" ><br>
+<p>        </p>
+<img src="/static/bloodbank/images/statistics/stat20.gif" class="img-responsive" alt="" ><br>
+<p>        </p>
+<p>        </p>
 
 <h2 class="title-style-1">RED CROSS BLOOD BANKS ACROSS INDIA<span class="title-under"></span></h2>
-<img src="/static/bloodbank/images/statistics/map.jpg"  alt="" ><br>
-<img src="/static/bloodbank/images/statistics/table2.png"  alt="" ><br>
+<img src="/static/bloodbank/images/statistics/map.jpg"  class="img-responsive" alt="" ><br>
+<p>        </p>
+<img src="/static/bloodbank/images/statistics/table2.png"  class="img-responsive"  alt="" ><br>
 
-<p><strong>The National Head Quarter </strong>at New Delhi houses the Blood Bank at New Delhi.</p>
+<p><strong>The National Head Quarter </strong> at New Delhi houses the Blood Bank at New Delhi.</p>
 
 <br>
 <p><center><strong>% of Voluntary Blood Donation in All India & Red Cross Blood Banks</strong></center></p>
 
-<img src="/static/bloodbank/images/statistics/voldonate.png"  alt="" ><br>
+<img src="/static/bloodbank/images/statistics/voldonate.png" height="80%" width="70%" class="img-responsive"  alt="" ><br>
 
 <p><center><strong>Blood units collected & required in the country</strong></center></p>
-<img src="/static/bloodbank/images/statistics/bloodunit.gif"  alt="" ><br>
+<br>
+<img src="/static/bloodbank/images/statistics/bloodunit.gif"   class="img-responsive" alt="" ><br>
+<br>
+
 
 <p><center><strong>Percentage of Voluntary Blood Collection in   IRCS (National Head Quarters) (2001-2007)</strong></center></p>
-<img src="/static/bloodbank/images/statistics/volcollect.gif"  alt="" ><br>
+<br>
+<img src="/static/bloodbank/images/statistics/volcollect.gif"  class="img-responsive"  alt="" >
+<p>      </p>
+
+<br>
 
 <p><center><strong>Voluntary Blood Donation Camps in IRCS (National Head Quarters)(2004-2007)</strong></center></p>
-<img src="/static/bloodbank/images/statistics/volc.gif"  alt="" ><br>
+<br>
+<img src="/static/bloodbank/images/statistics/volc.gif"  class="img-responsive"   alt="" ><br>
 
-
+</div>
 
 
 
@@ -348,36 +248,8 @@
 
  -->
 
-
        
-        
-        <!-- jQuery -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="/static/bloodbank/js/jquery-1.11.1.min.js"><\/script>')</script>
-
-        <!-- Bootsrap javascript file -->
-        <script src="/static/bloodbank/js/bootstrap.min.js"></script>
-
-        <!-- PrettyPhoto javascript file -->
-        <script src="/static/bloodbank/js/jquery.prettyPhoto.js"></script>
-
-
-
-        <!-- Google map  -->
-        <script src="http://maps.google.com/maps/api/js?sensor=false&amp;libraries=places" type="text/javascript"></script>
-
-
-        <!-- Template main javascript -->
-        <script src="/static/bloodbank/js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
+     
+       {% include "bloodbank/menu_js.html" %}
     </body>
 </html>

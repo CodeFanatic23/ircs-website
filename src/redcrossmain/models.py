@@ -29,7 +29,7 @@ class Post(models.Model):
 	category = models.CharField(max_length=20,null=True,blank=True,default='Others')
 	date = models.DateTimeField(auto_now_add=False,auto_now=True)
 	content = RichTextUploadingField(config_name='default')
-	preview_image = models.ImageField(upload_to=os.path.join(settings.MEDIA_ROOT,"uploads","posts","temporary"), blank=True,default=os.path.join(settings.MEDIA_ROOT,"uploads","posts","default.PNG"))
+	preview_image = models.ImageField(upload_to=os.path.join(settings.MEDIA_ROOT,"uploads","posts","temporary"), blank=True,null=True)
 	status = models.CharField(max_length=10,null=True,blank=True,default='Draft')
 	featured = models.BooleanField(default=False)
 	title_slug = models.SlugField(editable=False)
@@ -56,18 +56,12 @@ class Top_Slider(models.Model):
 	class Meta:
 		verbose_name_plural = 'Change Homepage Slider Images'
 
-class Team_Images(models.Model):
-	images = models.FileField(upload_to=os.path.join(settings.MEDIA_ROOT,"uploads","temporary"),blank=False,null=True)
-	date = models.DateTimeField(auto_now_add=False,auto_now=True)
-
-	class Meta:
-		verbose_name_plural = 'Change Our Team'
 
 class Branch_Number(models.Model):
-	branches = models.IntegerField(validators=[MinValueValidator(1)],blank=True,null=True)
-	pmc = models.IntegerField(validators=[MinValueValidator(1)],blank=True,null=True,verbose_name='Primary Health Centres')
-	bb = models.IntegerField(validators=[MinValueValidator(1)],blank=True,null=True,verbose_name='Blood Banks')
-	members = models.IntegerField(validators=[MinValueValidator(1)],blank=True,null=True,verbose_name='Member count')
+	branches = models.IntegerField(validators=[MinValueValidator(1)],blank=True,null=True,default=700)
+	pmc = models.IntegerField(validators=[MinValueValidator(1)],blank=True,null=True,verbose_name='Primary Health Centres',default=600)
+	bb = models.IntegerField(validators=[MinValueValidator(1)],blank=True,null=True,verbose_name='Blood Banks',default=170)
+	members = models.IntegerField(validators=[MinValueValidator(1)],blank=True,null=True,verbose_name='Member count',default=12)
 
 	class Meta:
 		verbose_name_plural = 'Change Branch/PMC count '
@@ -153,6 +147,13 @@ def upload2(sender,instance,**kwargs):
 		pass
 signals.post_save.connect(upload2,sender=Post)
 
+def clean(sender,instance,**kwargs):
+	try:
+		remove_dir(os.path.join(settings.MEDIA_ROOT,"uploads","posts",str(instance.category).lower(),instance.title_slug))
+	except Exception as e:
+		print(e)
+		pass
+signals.post_delete.connect(clean,sender=Post)
 def uploadGal(sender,instance,**kwargs):
 	file_name = str(instance.images)
 	file_name_cleaned = re.sub(' ', '_', file_name)
@@ -194,6 +195,22 @@ class Hometext(models.Model):
 
 	class Meta:
 		verbose_name_plural = 'Home Page Text'
+
+class Download(models.Model):
+	name = models.CharField(max_length=50,blank=False,null=True)
+	file = models.FileField(upload_to=os.path.join(settings.MEDIA_ROOT,"uploads","downloads"),blank=False,null=True)
+	file_name = models.CharField(max_length=150,blank=False,null=True,editable=False)
+
+	class Meta:
+		verbose_name_plural = 'Downloads Section'
+	def save(self, *args, **kwargs):
+		file_name = str(self.file)
+		file_name_cleaned = re.sub(' ', '_', file_name)
+		self.file_name = file_name_cleaned.split('/')[-1].lower()
+		print(self.file_name)
+		
+
+		super(Download, self).save(*args, **kwargs)
 
 class Disease6m(models.Model):
 	CHOICES_DISEASES = (
@@ -296,7 +313,6 @@ class BloodDonation(models.Model):
 	for_women = models.ManyToManyField(Women,blank=True)
 	info_share = models.BooleanField(default=False,blank=False)
 	terms_risks = models.BooleanField(default=False,blank=False)
-
 
 
 def send_message(sender,instance,**kwargs):

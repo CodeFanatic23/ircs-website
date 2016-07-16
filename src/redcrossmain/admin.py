@@ -33,7 +33,10 @@ class TopSliderAdmin(admin.ModelAdmin):
 	model = Top_Slider
 
 	def has_add_permission(self,request):
-		return False
+		if self.model.objects.count() >= 1:
+			return False
+		else:
+			return True
 
 	def get_actions(self, request):
 
@@ -47,16 +50,14 @@ class TopSliderAdmin(admin.ModelAdmin):
 		#Disable delete
 		return False
 
-class TeamImagesAdmin(admin.ModelAdmin):
-	list_display = ['date']
-	model = Team_Images
-
-	# def has_add_permission(self,request):
-	# 	return False
-
 class AlertAdmin(admin.ModelAdmin):
 	list_display = ['title','date']
 	model = Alert
+	def has_add_permission(self,request):
+		if self.model.objects.count() >= 4:
+			return False
+		else:
+			return True
 
 
 	# def has_add_permission(self,request):
@@ -83,16 +84,30 @@ class BranchNumberAdmin(admin.ModelAdmin):
 	# 	#Disable delete
 	# 	return False
 
-	# def has_add_permission(self,request):
-	# 	return False
+	def has_add_permission(self,request):
+		if self.model.objects.count() >= 1:
+			return False
+		else:
+			return True
 
 class HometextAdmin(admin.ModelAdmin):
 	list_display = ['updated']
 
 	model = Hometext
+	def has_add_permission(self,request):
+		if self.model.objects.count() >= 1:
+			return False
+		else:
+			return True
 
 class RtiAdmin(admin.ModelAdmin):
 	list_display = ['date']
+
+	def has_add_permission(self,request):
+		if self.model.objects.count() >= 1:
+			return False
+		else:
+			return True
 
 class BloodDonationAdmin(admin.ModelAdmin):
 	list_display = ['name','age','mobile_number','blood_group']
@@ -106,15 +121,19 @@ class EventAdmin(admin.ModelAdmin):
 
 class GalleryAdmin(admin.ModelAdmin):
 	list_display = ['album_name']
-
 	model = Gallery
+
+class DownloadAdmin(admin.ModelAdmin):
+	list_display = ['name']
+
+	model = Download
+admin.site.register(Download,DownloadAdmin)
 admin.site.register(Gallery,GalleryAdmin)
 admin.site.register(Event,EventAdmin)
 admin.site.register(BloodDonation,BloodDonationAdmin)
 admin.site.register(Rti,RtiAdmin)
 admin.site.register(Hometext,HometextAdmin)
 admin.site.register(Top_Slider,TopSliderAdmin)
-admin.site.register(Team_Images,TeamImagesAdmin)
 admin.site.register(Alert,AlertAdmin)
 admin.site.register(Newsletter,NewsletterAdmin)
 admin.site.register(Branch_Number,BranchNumberAdmin)

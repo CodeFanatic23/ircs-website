@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 style="margin-left: 40%;margin-right: 40%;padding-top: 50px;">Downloads</h1>
+<div class="table-responsive">
+                  <table class="table table-hover table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th></th>                    
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for x in data %}
+                      <tr>
+                        <td style="text-transform:capitalize;">{{x.name}}</td>
+                        <td><a href="/media/uploads/downloads/{{x.file_name}}" target="_blank"><strong>Download</strong></td>
+                      </tr>
+                      {% endfor %}
+                      
+                    </tbody>
+                  </table>
+                  </div>
+
+{% endblock %}
