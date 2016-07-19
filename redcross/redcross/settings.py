@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -29,15 +30,16 @@ ALLOWED_HOSTS = ['*']
 
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = '****'
-EMAIL_HOST_USER = '******'
-EMAIL_HOST_PASSWORD = '********'
-DEFAULT_FROM_EMAIL = '***********'
-SERVER_EMAIL = '*****************'
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = 'noreply@dopybitsgoa.com'
+SERVER_EMAIL = 'noreply@indianredcross.com'
 
 # Application definition
 
 INSTALLED_APPS = [
+    # 'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,10 +51,9 @@ INSTALLED_APPS = [
     'registration',
     'ckeditor',
     'ckeditor_uploader',
-    'easy_thumbnails',
-    'filer',
     'mptt',
     'crispy_forms',
+    # 'multiupload',
     'django_mobile',
     'bootstrap3',
     #local
@@ -110,7 +111,20 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'redcross',
+#         'USER': 'ircs',
+#         'PASSWORD': 'somepass',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
@@ -149,19 +163,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"redcross_static")
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR , "static_in_pro"),
-    #os.path.join(BASE_DIR, "static_in_env"),
-   # '/var/www/static/',
-]
 
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "redcross_media")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media")
 
 LOGIN_REDIRECT_URL = '/'
 
@@ -186,7 +201,6 @@ THUMBNAIL_HIGH_RESOLUTION = True
 THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.colorspace',
     'easy_thumbnails.processors.autocrop',
-    #'easy_thumbnails.processors.scale_and_crop',
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters',
 )
@@ -230,3 +244,5 @@ HAYSTACK_CONNECTIONS = {
 
 }
 SITE_ID = 1
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

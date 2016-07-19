@@ -1,0 +1,1 @@
+web: gunicorn redcross.wsgi --log-file -
